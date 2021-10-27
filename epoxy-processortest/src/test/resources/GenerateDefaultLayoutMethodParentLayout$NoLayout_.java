@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import androidx.annotation.LayoutRes;
@@ -9,7 +10,8 @@ import java.lang.Override;
 import java.lang.String;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class GenerateDefaultLayoutMethodParentLayout$NoLayout_ extends GenerateDefaultLayoutMethodParentLayout.NoLayout implements GeneratedModel<Object>, GenerateDefaultLayoutMethodParentLayout_NoLayoutBuilder {
   private OnModelBoundListener<GenerateDefaultLayoutMethodParentLayout$NoLayout_, Object> onModelBoundListener_epoxyGeneratedModel;
 
@@ -48,7 +50,8 @@ public class GenerateDefaultLayoutMethodParentLayout$NoLayout_ extends GenerateD
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public GenerateDefaultLayoutMethodParentLayout$NoLayout_ onBind(
       OnModelBoundListener<GenerateDefaultLayoutMethodParentLayout$NoLayout_, Object> listener) {
     onMutation();
@@ -70,7 +73,8 @@ public class GenerateDefaultLayoutMethodParentLayout$NoLayout_ extends GenerateD
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public GenerateDefaultLayoutMethodParentLayout$NoLayout_ onUnbind(
       OnModelUnboundListener<GenerateDefaultLayoutMethodParentLayout$NoLayout_, Object> listener) {
     onMutation();
@@ -91,8 +95,7 @@ public class GenerateDefaultLayoutMethodParentLayout$NoLayout_ extends GenerateD
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public GenerateDefaultLayoutMethodParentLayout$NoLayout_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<GenerateDefaultLayoutMethodParentLayout$NoLayout_, Object> listener) {
     onMutation();
@@ -114,8 +117,7 @@ public class GenerateDefaultLayoutMethodParentLayout$NoLayout_ extends GenerateD
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public GenerateDefaultLayoutMethodParentLayout$NoLayout_ onVisibilityChanged(
       OnModelVisibilityChangedListener<GenerateDefaultLayoutMethodParentLayout$NoLayout_, Object> listener) {
     onMutation();
@@ -140,8 +142,8 @@ public class GenerateDefaultLayoutMethodParentLayout$NoLayout_ extends GenerateD
   }
 
   @Override
-  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -152,35 +154,34 @@ public class GenerateDefaultLayoutMethodParentLayout$NoLayout_ extends GenerateD
   }
 
   @Override
-  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ id(@Nullable CharSequence arg0,
-      @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ id(@Nullable CharSequence arg0,
-      long arg1) {
-    super.id(arg0, arg1);
+  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public GenerateDefaultLayoutMethodParentLayout$NoLayout_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public GenerateDefaultLayoutMethodParentLayout$NoLayout_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -251,13 +252,13 @@ public class GenerateDefaultLayoutMethodParentLayout$NoLayout_ extends GenerateD
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + value;
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + value;
+    return _result;
   }
 
   @Override

@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import androidx.annotation.LayoutRes;
@@ -13,7 +14,8 @@ import java.lang.String;
 import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> implements GeneratedModel<PropDefaultsView>, PropDefaultsViewModelBuilder {
   private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(6);
 
@@ -25,31 +27,22 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
 
   private OnModelVisibilityChangedListener<PropDefaultsViewModel_, PropDefaultsView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
-  /**
-   * Bitset index: 0 */
   @Nullable
   private CharSequence defaultsToNull_CharSequence = (CharSequence) null;
 
   /**
-   * Bitset index: 1 */
+   * Bitset index: 1
+   */
   @NonNull
   private CharSequence noDefaultSoItIsRequired_CharSequence;
 
-  /**
-   * Bitset index: 2 */
   private int primitivesHaveImplicitDefaultsAndCannotBeRequired_Int = 0;
 
-  /**
-   * Bitset index: 3 */
   private int primitiveWithExplicitDefault_Int = PropDefaultsView.PRIMITIVE_DEFAULT;
 
-  /**
-   * Bitset index: 4 */
   @NonNull
   private String objectWithDefault_String = PropDefaultsView.STRING_DEFAULT;
 
-  /**
-   * Bitset index: 5 */
   @Nullable
   private String objectWithDefaultAndNullable_String = PropDefaultsView.STRING_DEFAULT;
 
@@ -127,7 +120,8 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public PropDefaultsViewModel_ onBind(
       OnModelBoundListener<PropDefaultsViewModel_, PropDefaultsView> listener) {
     onMutation();
@@ -149,7 +143,8 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public PropDefaultsViewModel_ onUnbind(
       OnModelUnboundListener<PropDefaultsViewModel_, PropDefaultsView> listener) {
     onMutation();
@@ -170,8 +165,7 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public PropDefaultsViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<PropDefaultsViewModel_, PropDefaultsView> listener) {
     onMutation();
@@ -193,8 +187,7 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public PropDefaultsViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<PropDefaultsViewModel_, PropDefaultsView> listener) {
     onMutation();
@@ -208,7 +201,6 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
    * @see PropDefaultsView#defaultsToNull(CharSequence)
    */
   public PropDefaultsViewModel_ defaultsToNull(@Nullable CharSequence defaultsToNull) {
-    assignedAttributes_epoxyGeneratedModel.set(0);
     onMutation();
     this.defaultsToNull_CharSequence = defaultsToNull;
     return this;
@@ -247,7 +239,6 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
    */
   public PropDefaultsViewModel_ primitivesHaveImplicitDefaultsAndCannotBeRequired(
       int primitivesHaveImplicitDefaultsAndCannotBeRequired) {
-    assignedAttributes_epoxyGeneratedModel.set(2);
     onMutation();
     this.primitivesHaveImplicitDefaultsAndCannotBeRequired_Int = primitivesHaveImplicitDefaultsAndCannotBeRequired;
     return this;
@@ -263,7 +254,6 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
    * @see PropDefaultsView#primitiveWithExplicitDefault(int)
    */
   public PropDefaultsViewModel_ primitiveWithExplicitDefault(int primitiveWithExplicitDefault) {
-    assignedAttributes_epoxyGeneratedModel.set(3);
     onMutation();
     this.primitiveWithExplicitDefault_Int = primitiveWithExplicitDefault;
     return this;
@@ -282,7 +272,6 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
     if (objectWithDefault == null) {
       throw new IllegalArgumentException("objectWithDefault cannot be null");
     }
-    assignedAttributes_epoxyGeneratedModel.set(4);
     onMutation();
     this.objectWithDefault_String = objectWithDefault;
     return this;
@@ -300,7 +289,6 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
    */
   public PropDefaultsViewModel_ objectWithDefaultAndNullable(
       @Nullable String objectWithDefaultAndNullable) {
-    assignedAttributes_epoxyGeneratedModel.set(5);
     onMutation();
     this.objectWithDefaultAndNullable_String = objectWithDefaultAndNullable;
     return this;
@@ -318,8 +306,8 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
   }
 
   @Override
-  public PropDefaultsViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public PropDefaultsViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -330,33 +318,34 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
   }
 
   @Override
-  public PropDefaultsViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public PropDefaultsViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public PropDefaultsViewModel_ id(@Nullable CharSequence arg0, @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public PropDefaultsViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public PropDefaultsViewModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public PropDefaultsViewModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public PropDefaultsViewModel_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public PropDefaultsViewModel_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public PropDefaultsViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -448,18 +437,18 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (defaultsToNull_CharSequence != null ? defaultsToNull_CharSequence.hashCode() : 0);
-    result = 31 * result + (noDefaultSoItIsRequired_CharSequence != null ? noDefaultSoItIsRequired_CharSequence.hashCode() : 0);
-    result = 31 * result + primitivesHaveImplicitDefaultsAndCannotBeRequired_Int;
-    result = 31 * result + primitiveWithExplicitDefault_Int;
-    result = 31 * result + (objectWithDefault_String != null ? objectWithDefault_String.hashCode() : 0);
-    result = 31 * result + (objectWithDefaultAndNullable_String != null ? objectWithDefaultAndNullable_String.hashCode() : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (defaultsToNull_CharSequence != null ? defaultsToNull_CharSequence.hashCode() : 0);
+    _result = 31 * _result + (noDefaultSoItIsRequired_CharSequence != null ? noDefaultSoItIsRequired_CharSequence.hashCode() : 0);
+    _result = 31 * _result + primitivesHaveImplicitDefaultsAndCannotBeRequired_Int;
+    _result = 31 * _result + primitiveWithExplicitDefault_Int;
+    _result = 31 * _result + (objectWithDefault_String != null ? objectWithDefault_String.hashCode() : 0);
+    _result = 31 * _result + (objectWithDefaultAndNullable_String != null ? objectWithDefaultAndNullable_String.hashCode() : 0);
+    return _result;
   }
 
   @Override
@@ -479,3 +468,4 @@ public class PropDefaultsViewModel_ extends EpoxyModel<PropDefaultsView> impleme
     return totalSpanCount;
   }
 }
+

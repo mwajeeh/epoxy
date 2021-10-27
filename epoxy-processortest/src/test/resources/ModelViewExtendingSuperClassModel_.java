@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import android.view.ViewGroup;
@@ -9,13 +10,11 @@ import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.UnsupportedOperationException;
-import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExtendingSuperClass> implements GeneratedModel<ModelViewExtendingSuperClass>, ModelViewExtendingSuperClassModelBuilder {
-  private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(2);
-
   private OnModelBoundListener<ModelViewExtendingSuperClassModel_, ModelViewExtendingSuperClass> onModelBoundListener_epoxyGeneratedModel;
 
   private OnModelUnboundListener<ModelViewExtendingSuperClassModel_, ModelViewExtendingSuperClass> onModelUnboundListener_epoxyGeneratedModel;
@@ -24,12 +23,8 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
 
   private OnModelVisibilityChangedListener<ModelViewExtendingSuperClassModel_, ModelViewExtendingSuperClass> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
-  /**
-   * Bitset index: 0 */
   private int subClassValue_Int = 0;
 
-  /**
-   * Bitset index: 1 */
   private int superClassValue_Int = 0;
 
   @Override
@@ -44,7 +39,7 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
   }
 
   @Override
-  protected ModelViewExtendingSuperClass buildView(ViewGroup parent) {
+  public ModelViewExtendingSuperClass buildView(ViewGroup parent) {
     ModelViewExtendingSuperClass v = new ModelViewExtendingSuperClass(parent.getContext());
     v.setLayoutParams(new ViewGroup.MarginLayoutParams(ViewGroup.MarginLayoutParams.MATCH_PARENT, ViewGroup.MarginLayoutParams.MATCH_PARENT));
     return v;
@@ -97,7 +92,8 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public ModelViewExtendingSuperClassModel_ onBind(
       OnModelBoundListener<ModelViewExtendingSuperClassModel_, ModelViewExtendingSuperClass> listener) {
     onMutation();
@@ -121,7 +117,8 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public ModelViewExtendingSuperClassModel_ onUnbind(
       OnModelUnboundListener<ModelViewExtendingSuperClassModel_, ModelViewExtendingSuperClass> listener) {
     onMutation();
@@ -143,8 +140,7 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public ModelViewExtendingSuperClassModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<ModelViewExtendingSuperClassModel_, ModelViewExtendingSuperClass> listener) {
     onMutation();
@@ -166,8 +162,7 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public ModelViewExtendingSuperClassModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<ModelViewExtendingSuperClassModel_, ModelViewExtendingSuperClass> listener) {
     onMutation();
@@ -181,7 +176,6 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
    * @see ModelViewExtendingSuperClass#subClassValue(int)
    */
   public ModelViewExtendingSuperClassModel_ subClassValue(int subClassValue) {
-    assignedAttributes_epoxyGeneratedModel.set(0);
     onMutation();
     this.subClassValue_Int = subClassValue;
     return this;
@@ -197,7 +191,6 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
    * @see ModelViewExtendingSuperClass#superClassValue(int)
    */
   public ModelViewExtendingSuperClassModel_ superClassValue(int superClassValue) {
-    assignedAttributes_epoxyGeneratedModel.set(1);
     onMutation();
     this.superClassValue_Int = superClassValue;
     return this;
@@ -214,8 +207,8 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
   }
 
   @Override
-  public ModelViewExtendingSuperClassModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public ModelViewExtendingSuperClassModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -226,33 +219,33 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
   }
 
   @Override
-  public ModelViewExtendingSuperClassModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public ModelViewExtendingSuperClassModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public ModelViewExtendingSuperClassModel_ id(@Nullable CharSequence arg0,
-      @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public ModelViewExtendingSuperClassModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public ModelViewExtendingSuperClassModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public ModelViewExtendingSuperClassModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public ModelViewExtendingSuperClassModel_ layout(@LayoutRes int arg0) {
+  public ModelViewExtendingSuperClassModel_ layout(@LayoutRes int layoutRes) {
     throw new UnsupportedOperationException("Layout resources are unsupported with programmatic views.");
   }
 
   @Override
   public ModelViewExtendingSuperClassModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -286,7 +279,6 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
     onModelUnboundListener_epoxyGeneratedModel = null;
     onModelVisibilityStateChangedListener_epoxyGeneratedModel = null;
     onModelVisibilityChangedListener_epoxyGeneratedModel = null;
-    assignedAttributes_epoxyGeneratedModel.clear();
     this.subClassValue_Int = 0;
     this.superClassValue_Int = 0;
     super.reset();
@@ -328,14 +320,14 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + subClassValue_Int;
-    result = 31 * result + superClassValue_Int;
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + subClassValue_Int;
+    _result = 31 * _result + superClassValue_Int;
+    return _result;
   }
 
   @Override
@@ -351,3 +343,4 @@ public class ModelViewExtendingSuperClassModel_ extends EpoxyModel<ModelViewExte
     return totalSpanCount;
   }
 }
+

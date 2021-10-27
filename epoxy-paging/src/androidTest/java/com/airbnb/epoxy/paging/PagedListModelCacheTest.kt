@@ -317,7 +317,8 @@ class PagedListModelCacheTest {
     private fun createPagedList(items: List<Item>): Pair<PagedList<Item>, ListDataSource<Item>> {
         val dataSource = ListDataSource(items)
         val pagedList = PagedList.Builder<Int, Item>(
-            dataSource, PagedList.Config.Builder()
+            dataSource,
+            PagedList.Config.Builder()
                 .setEnablePlaceholders(true)
                 .setInitialLoadSizeHint(PAGE_SIZE * 2)
                 .setPageSize(PAGE_SIZE)

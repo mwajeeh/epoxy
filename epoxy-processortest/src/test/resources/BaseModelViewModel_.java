@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import androidx.annotation.LayoutRes;
@@ -13,7 +14,8 @@ import java.lang.String;
 import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements GeneratedModel<BaseModelView>, BaseModelViewModelBuilder {
   private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(1);
 
@@ -26,7 +28,8 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
   private OnModelVisibilityChangedListener<BaseModelViewModel_, BaseModelView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
   /**
-   * Bitset index: 0 */
+   * Bitset index: 0
+   */
   @NonNull
   private String clickListener_String;
 
@@ -83,7 +86,8 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public BaseModelViewModel_ onBind(
       OnModelBoundListener<BaseModelViewModel_, BaseModelView> listener) {
     onMutation();
@@ -105,7 +109,8 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public BaseModelViewModel_ onUnbind(
       OnModelUnboundListener<BaseModelViewModel_, BaseModelView> listener) {
     onMutation();
@@ -126,8 +131,7 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public BaseModelViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<BaseModelViewModel_, BaseModelView> listener) {
     onMutation();
@@ -149,8 +153,7 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public BaseModelViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<BaseModelViewModel_, BaseModelView> listener) {
     onMutation();
@@ -185,8 +188,8 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
   }
 
   @Override
-  public BaseModelViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public BaseModelViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -197,32 +200,33 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
   }
 
   @Override
-  public BaseModelViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public BaseModelViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public BaseModelViewModel_ id(@Nullable CharSequence arg0, @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public BaseModelViewModel_ id(@Nullable CharSequence key, @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public BaseModelViewModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public BaseModelViewModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public BaseModelViewModel_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public BaseModelViewModel_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
-  public BaseModelViewModel_ spanSizeOverride(@Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+  public BaseModelViewModel_ spanSizeOverride(
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -294,13 +298,13 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (clickListener_String != null ? clickListener_String.hashCode() : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (clickListener_String != null ? clickListener_String.hashCode() : 0);
+    return _result;
   }
 
   @Override
@@ -315,3 +319,4 @@ public class BaseModelViewModel_ extends TestBaseModel<BaseModelView> implements
     return totalSpanCount;
   }
 }
+

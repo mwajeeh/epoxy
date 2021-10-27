@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import android.content.Context;
@@ -18,7 +19,8 @@ import java.lang.UnsupportedOperationException;
 import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyModel<TestFieldPropGenerateStringOverloadsOptionView> implements GeneratedModel<TestFieldPropGenerateStringOverloadsOptionView>, TestFieldPropGenerateStringOverloadsOptionViewModelBuilder {
   private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(1);
 
@@ -31,7 +33,8 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
   private OnModelVisibilityChangedListener<TestFieldPropGenerateStringOverloadsOptionViewModel_, TestFieldPropGenerateStringOverloadsOptionView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
   /**
-   * Bitset index: 0 */
+   * Bitset index: 0
+   */
   private StringAttributeData value_StringAttributeData =  new StringAttributeData();
 
   @Override
@@ -49,7 +52,7 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
   }
 
   @Override
-  protected TestFieldPropGenerateStringOverloadsOptionView buildView(ViewGroup parent) {
+  public TestFieldPropGenerateStringOverloadsOptionView buildView(ViewGroup parent) {
     TestFieldPropGenerateStringOverloadsOptionView v = new TestFieldPropGenerateStringOverloadsOptionView(parent.getContext());
     v.setLayoutParams(new ViewGroup.MarginLayoutParams(ViewGroup.MarginLayoutParams.WRAP_CONTENT, ViewGroup.MarginLayoutParams.WRAP_CONTENT));
     return v;
@@ -98,7 +101,8 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestFieldPropGenerateStringOverloadsOptionViewModel_ onBind(
       OnModelBoundListener<TestFieldPropGenerateStringOverloadsOptionViewModel_, TestFieldPropGenerateStringOverloadsOptionView> listener) {
     onMutation();
@@ -120,7 +124,8 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestFieldPropGenerateStringOverloadsOptionViewModel_ onUnbind(
       OnModelUnboundListener<TestFieldPropGenerateStringOverloadsOptionViewModel_, TestFieldPropGenerateStringOverloadsOptionView> listener) {
     onMutation();
@@ -142,8 +147,7 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestFieldPropGenerateStringOverloadsOptionViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<TestFieldPropGenerateStringOverloadsOptionViewModel_, TestFieldPropGenerateStringOverloadsOptionView> listener) {
     onMutation();
@@ -166,8 +170,7 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestFieldPropGenerateStringOverloadsOptionViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<TestFieldPropGenerateStringOverloadsOptionViewModel_, TestFieldPropGenerateStringOverloadsOptionView> listener) {
     onMutation();
@@ -245,8 +248,8 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
   }
 
   @Override
-  public TestFieldPropGenerateStringOverloadsOptionViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public TestFieldPropGenerateStringOverloadsOptionViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -257,34 +260,34 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
   }
 
   @Override
-  public TestFieldPropGenerateStringOverloadsOptionViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public TestFieldPropGenerateStringOverloadsOptionViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public TestFieldPropGenerateStringOverloadsOptionViewModel_ id(@Nullable CharSequence arg0,
-      @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public TestFieldPropGenerateStringOverloadsOptionViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public TestFieldPropGenerateStringOverloadsOptionViewModel_ id(@Nullable CharSequence arg0,
-      long arg1) {
-    super.id(arg0, arg1);
+  public TestFieldPropGenerateStringOverloadsOptionViewModel_ id(@Nullable CharSequence key,
+      long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public TestFieldPropGenerateStringOverloadsOptionViewModel_ layout(@LayoutRes int arg0) {
+  public TestFieldPropGenerateStringOverloadsOptionViewModel_ layout(@LayoutRes int layoutRes) {
     throw new UnsupportedOperationException("Layout resources are unsupported with programmatic views.");
   }
 
   @Override
   public TestFieldPropGenerateStringOverloadsOptionViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -356,13 +359,13 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (value_StringAttributeData != null ? value_StringAttributeData.hashCode() : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (value_StringAttributeData != null ? value_StringAttributeData.hashCode() : 0);
+    return _result;
   }
 
   @Override
@@ -377,3 +380,4 @@ public class TestFieldPropGenerateStringOverloadsOptionViewModel_ extends EpoxyM
     return totalSpanCount;
   }
 }
+

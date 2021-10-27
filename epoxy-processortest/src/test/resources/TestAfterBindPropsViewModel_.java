@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import androidx.annotation.LayoutRes;
@@ -7,13 +8,11 @@ import java.lang.Number;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
-import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsView> implements GeneratedModel<TestAfterBindPropsView>, TestAfterBindPropsViewModelBuilder {
-  private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(2);
-
   private OnModelBoundListener<TestAfterBindPropsViewModel_, TestAfterBindPropsView> onModelBoundListener_epoxyGeneratedModel;
 
   private OnModelUnboundListener<TestAfterBindPropsViewModel_, TestAfterBindPropsView> onModelUnboundListener_epoxyGeneratedModel;
@@ -22,12 +21,8 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
 
   private OnModelVisibilityChangedListener<TestAfterBindPropsViewModel_, TestAfterBindPropsView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
-  /**
-   * Bitset index: 0 */
   private boolean flag_Boolean = false;
 
-  /**
-   * Bitset index: 1 */
   private boolean flagSuper_Boolean = false;
 
   @Override
@@ -83,7 +78,8 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestAfterBindPropsViewModel_ onBind(
       OnModelBoundListener<TestAfterBindPropsViewModel_, TestAfterBindPropsView> listener) {
     onMutation();
@@ -105,7 +101,8 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestAfterBindPropsViewModel_ onUnbind(
       OnModelUnboundListener<TestAfterBindPropsViewModel_, TestAfterBindPropsView> listener) {
     onMutation();
@@ -126,8 +123,7 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestAfterBindPropsViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<TestAfterBindPropsViewModel_, TestAfterBindPropsView> listener) {
     onMutation();
@@ -149,8 +145,7 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestAfterBindPropsViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<TestAfterBindPropsViewModel_, TestAfterBindPropsView> listener) {
     onMutation();
@@ -164,7 +159,6 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
    * @see TestAfterBindPropsView#setFlag(boolean)
    */
   public TestAfterBindPropsViewModel_ flag(boolean flag) {
-    assignedAttributes_epoxyGeneratedModel.set(0);
     onMutation();
     this.flag_Boolean = flag;
     return this;
@@ -177,10 +171,9 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
   /**
    * <i>Optional</i>: Default value is false
    *
-   * @see TestAfterBindPropsView#setFlagSuper(boolean)
+   * @see TestAfterBindPropsSuperView#setFlagSuper(boolean)
    */
   public TestAfterBindPropsViewModel_ flagSuper(boolean flagSuper) {
-    assignedAttributes_epoxyGeneratedModel.set(1);
     onMutation();
     this.flagSuper_Boolean = flagSuper;
     return this;
@@ -197,8 +190,8 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
   }
 
   @Override
-  public TestAfterBindPropsViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public TestAfterBindPropsViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -209,34 +202,34 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
   }
 
   @Override
-  public TestAfterBindPropsViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public TestAfterBindPropsViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public TestAfterBindPropsViewModel_ id(@Nullable CharSequence arg0,
-      @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public TestAfterBindPropsViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public TestAfterBindPropsViewModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public TestAfterBindPropsViewModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public TestAfterBindPropsViewModel_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public TestAfterBindPropsViewModel_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public TestAfterBindPropsViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -270,7 +263,6 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
     onModelUnboundListener_epoxyGeneratedModel = null;
     onModelVisibilityStateChangedListener_epoxyGeneratedModel = null;
     onModelVisibilityChangedListener_epoxyGeneratedModel = null;
-    assignedAttributes_epoxyGeneratedModel.clear();
     this.flag_Boolean = false;
     this.flagSuper_Boolean = false;
     super.reset();
@@ -312,14 +304,14 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (flag_Boolean ? 1 : 0);
-    result = 31 * result + (flagSuper_Boolean ? 1 : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (flag_Boolean ? 1 : 0);
+    _result = 31 * _result + (flagSuper_Boolean ? 1 : 0);
+    return _result;
   }
 
   @Override
@@ -335,3 +327,4 @@ public class TestAfterBindPropsViewModel_ extends EpoxyModel<TestAfterBindPropsV
     return totalSpanCount;
   }
 }
+

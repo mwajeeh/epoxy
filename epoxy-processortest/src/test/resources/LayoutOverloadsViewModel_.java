@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import androidx.annotation.LayoutRes;
@@ -7,13 +8,11 @@ import java.lang.Number;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
-import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> implements GeneratedModel<LayoutOverloadsView>, LayoutOverloadsViewModelBuilder {
-  private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(0);
-
   private OnModelBoundListener<LayoutOverloadsViewModel_, LayoutOverloadsView> onModelBoundListener_epoxyGeneratedModel;
 
   private OnModelUnboundListener<LayoutOverloadsViewModel_, LayoutOverloadsView> onModelUnboundListener_epoxyGeneratedModel;
@@ -63,7 +62,8 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public LayoutOverloadsViewModel_ onBind(
       OnModelBoundListener<LayoutOverloadsViewModel_, LayoutOverloadsView> listener) {
     onMutation();
@@ -85,7 +85,8 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public LayoutOverloadsViewModel_ onUnbind(
       OnModelUnboundListener<LayoutOverloadsViewModel_, LayoutOverloadsView> listener) {
     onMutation();
@@ -106,8 +107,7 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public LayoutOverloadsViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<LayoutOverloadsViewModel_, LayoutOverloadsView> listener) {
     onMutation();
@@ -129,8 +129,7 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public LayoutOverloadsViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<LayoutOverloadsViewModel_, LayoutOverloadsView> listener) {
     onMutation();
@@ -145,8 +144,8 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
   }
 
   @Override
-  public LayoutOverloadsViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public LayoutOverloadsViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -157,33 +156,34 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
   }
 
   @Override
-  public LayoutOverloadsViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public LayoutOverloadsViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public LayoutOverloadsViewModel_ id(@Nullable CharSequence arg0, @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public LayoutOverloadsViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public LayoutOverloadsViewModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public LayoutOverloadsViewModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public LayoutOverloadsViewModel_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public LayoutOverloadsViewModel_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public LayoutOverloadsViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -227,7 +227,6 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
     onModelUnboundListener_epoxyGeneratedModel = null;
     onModelVisibilityStateChangedListener_epoxyGeneratedModel = null;
     onModelVisibilityChangedListener_epoxyGeneratedModel = null;
-    assignedAttributes_epoxyGeneratedModel.clear();
     super.reset();
     return this;
   }
@@ -261,12 +260,12 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    return _result;
   }
 
   @Override
@@ -280,3 +279,4 @@ public class LayoutOverloadsViewModel_ extends EpoxyModel<LayoutOverloadsView> i
     return totalSpanCount;
   }
 }
+

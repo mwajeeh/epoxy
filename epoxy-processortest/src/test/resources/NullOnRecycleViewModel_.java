@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import androidx.annotation.LayoutRes;
@@ -7,13 +8,11 @@ import java.lang.Number;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
-import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> implements GeneratedModel<NullOnRecycleView>, NullOnRecycleViewModelBuilder {
-  private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(1);
-
   private OnModelBoundListener<NullOnRecycleViewModel_, NullOnRecycleView> onModelBoundListener_epoxyGeneratedModel;
 
   private OnModelUnboundListener<NullOnRecycleViewModel_, NullOnRecycleView> onModelUnboundListener_epoxyGeneratedModel;
@@ -22,8 +21,6 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
 
   private OnModelVisibilityChangedListener<NullOnRecycleViewModel_, NullOnRecycleView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
-  /**
-   * Bitset index: 0 */
   @Nullable
   private CharSequence title_CharSequence = (CharSequence) null;
 
@@ -73,7 +70,8 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public NullOnRecycleViewModel_ onBind(
       OnModelBoundListener<NullOnRecycleViewModel_, NullOnRecycleView> listener) {
     onMutation();
@@ -96,7 +94,8 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public NullOnRecycleViewModel_ onUnbind(
       OnModelUnboundListener<NullOnRecycleViewModel_, NullOnRecycleView> listener) {
     onMutation();
@@ -117,8 +116,7 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public NullOnRecycleViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<NullOnRecycleViewModel_, NullOnRecycleView> listener) {
     onMutation();
@@ -140,8 +138,7 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public NullOnRecycleViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<NullOnRecycleViewModel_, NullOnRecycleView> listener) {
     onMutation();
@@ -155,7 +152,6 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
    * @see NullOnRecycleView#setTitle(CharSequence)
    */
   public NullOnRecycleViewModel_ title(@Nullable CharSequence title) {
-    assignedAttributes_epoxyGeneratedModel.set(0);
     onMutation();
     this.title_CharSequence = title;
     return this;
@@ -173,8 +169,8 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
   }
 
   @Override
-  public NullOnRecycleViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public NullOnRecycleViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -185,33 +181,34 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
   }
 
   @Override
-  public NullOnRecycleViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public NullOnRecycleViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public NullOnRecycleViewModel_ id(@Nullable CharSequence arg0, @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public NullOnRecycleViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public NullOnRecycleViewModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public NullOnRecycleViewModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public NullOnRecycleViewModel_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public NullOnRecycleViewModel_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public NullOnRecycleViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -245,7 +242,6 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
     onModelUnboundListener_epoxyGeneratedModel = null;
     onModelVisibilityStateChangedListener_epoxyGeneratedModel = null;
     onModelVisibilityChangedListener_epoxyGeneratedModel = null;
-    assignedAttributes_epoxyGeneratedModel.clear();
     this.title_CharSequence = (CharSequence) null;
     super.reset();
     return this;
@@ -283,13 +279,13 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (title_CharSequence != null ? title_CharSequence.hashCode() : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (title_CharSequence != null ? title_CharSequence.hashCode() : 0);
+    return _result;
   }
 
   @Override
@@ -304,3 +300,4 @@ public class NullOnRecycleViewModel_ extends EpoxyModel<NullOnRecycleView> imple
     return totalSpanCount;
   }
 }
+

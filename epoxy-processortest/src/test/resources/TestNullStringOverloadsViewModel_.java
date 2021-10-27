@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import android.content.Context;
@@ -10,13 +11,11 @@ import java.lang.Number;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
-import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullStringOverloadsView> implements GeneratedModel<TestNullStringOverloadsView>, TestNullStringOverloadsViewModelBuilder {
-  private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(1);
-
   private OnModelBoundListener<TestNullStringOverloadsViewModel_, TestNullStringOverloadsView> onModelBoundListener_epoxyGeneratedModel;
 
   private OnModelUnboundListener<TestNullStringOverloadsViewModel_, TestNullStringOverloadsView> onModelUnboundListener_epoxyGeneratedModel;
@@ -25,8 +24,6 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
 
   private OnModelVisibilityChangedListener<TestNullStringOverloadsViewModel_, TestNullStringOverloadsView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
-  /**
-   * Bitset index: 0 */
   private StringAttributeData title_StringAttributeData =  new StringAttributeData((CharSequence) null);
 
   @Override
@@ -75,7 +72,8 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestNullStringOverloadsViewModel_ onBind(
       OnModelBoundListener<TestNullStringOverloadsViewModel_, TestNullStringOverloadsView> listener) {
     onMutation();
@@ -97,7 +95,8 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestNullStringOverloadsViewModel_ onUnbind(
       OnModelUnboundListener<TestNullStringOverloadsViewModel_, TestNullStringOverloadsView> listener) {
     onMutation();
@@ -119,8 +118,7 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestNullStringOverloadsViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<TestNullStringOverloadsViewModel_, TestNullStringOverloadsView> listener) {
     onMutation();
@@ -142,8 +140,7 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestNullStringOverloadsViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<TestNullStringOverloadsViewModel_, TestNullStringOverloadsView> listener) {
     onMutation();
@@ -163,7 +160,6 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
    */
   public TestNullStringOverloadsViewModel_ title(@Nullable CharSequence title) {
     onMutation();
-    assignedAttributes_epoxyGeneratedModel.set(0);
     title_StringAttributeData.setValue(title);
     return this;
   }
@@ -177,7 +173,6 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
    */
   public TestNullStringOverloadsViewModel_ title(@StringRes int stringRes) {
     onMutation();
-    assignedAttributes_epoxyGeneratedModel.set(0);
     title_StringAttributeData.setValue(stringRes);
     return this;
   }
@@ -191,7 +186,6 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
    */
   public TestNullStringOverloadsViewModel_ title(@StringRes int stringRes, Object... formatArgs) {
     onMutation();
-    assignedAttributes_epoxyGeneratedModel.set(0);
     title_StringAttributeData.setValue(stringRes, formatArgs);
     return this;
   }
@@ -206,7 +200,6 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
   public TestNullStringOverloadsViewModel_ titleQuantityRes(@PluralsRes int pluralRes, int quantity,
       Object... formatArgs) {
     onMutation();
-    assignedAttributes_epoxyGeneratedModel.set(0);
     title_StringAttributeData.setValue(pluralRes, quantity, formatArgs);
     return this;
   }
@@ -218,8 +211,8 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
   }
 
   @Override
-  public TestNullStringOverloadsViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public TestNullStringOverloadsViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -230,34 +223,34 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
   }
 
   @Override
-  public TestNullStringOverloadsViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public TestNullStringOverloadsViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public TestNullStringOverloadsViewModel_ id(@Nullable CharSequence arg0,
-      @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public TestNullStringOverloadsViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public TestNullStringOverloadsViewModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public TestNullStringOverloadsViewModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public TestNullStringOverloadsViewModel_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public TestNullStringOverloadsViewModel_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public TestNullStringOverloadsViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -291,7 +284,6 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
     onModelUnboundListener_epoxyGeneratedModel = null;
     onModelVisibilityStateChangedListener_epoxyGeneratedModel = null;
     onModelVisibilityChangedListener_epoxyGeneratedModel = null;
-    assignedAttributes_epoxyGeneratedModel.clear();
     this.title_StringAttributeData =  new StringAttributeData((CharSequence) null);
     super.reset();
     return this;
@@ -329,13 +321,13 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (title_StringAttributeData != null ? title_StringAttributeData.hashCode() : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (title_StringAttributeData != null ? title_StringAttributeData.hashCode() : 0);
+    return _result;
   }
 
   @Override
@@ -350,3 +342,4 @@ public class TestNullStringOverloadsViewModel_ extends EpoxyModel<TestNullString
     return totalSpanCount;
   }
 }
+

@@ -4,7 +4,6 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.View.OnLongClickListener
 import android.view.ViewGroup
-
 import androidx.recyclerview.widget.RecyclerView
 
 /**
@@ -134,8 +133,8 @@ class WrappedEpoxyModelClickListener<T : EpoxyModel<*>, V> : OnClickListener, On
         }
 
         if (if (originalClickListener != null) {
-                originalClickListener != other.originalClickListener
-            } else {
+            originalClickListener != other.originalClickListener
+        } else {
                 other.originalClickListener != null
             }
         ) {

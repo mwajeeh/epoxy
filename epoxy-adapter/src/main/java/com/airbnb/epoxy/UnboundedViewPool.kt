@@ -1,11 +1,10 @@
 package com.airbnb.epoxy
 
 import android.util.SparseArray
-
-import java.util.LinkedList
-import java.util.Queue
 import androidx.recyclerview.widget.RecyclerView.RecycledViewPool
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import java.util.LinkedList
+import java.util.Queue
 
 /**
  * Like its parent, UnboundedViewPool lets you share Views between multiple RecyclerViews. However
@@ -34,6 +33,10 @@ internal class UnboundedViewPool : RecycledViewPool() {
 
     override fun putRecycledView(viewHolder: ViewHolder) {
         getScrapHeapForType(viewHolder.itemViewType).add(viewHolder)
+    }
+
+    override fun getRecycledViewCount(viewType: Int): Int {
+        return scrapHeaps.get(viewType)?.size ?: 0
     }
 
     private fun getScrapHeapForType(viewType: Int): Queue<ViewHolder> {

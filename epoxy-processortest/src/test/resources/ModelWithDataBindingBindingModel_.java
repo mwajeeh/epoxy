@@ -11,7 +11,8 @@ import java.lang.Override;
 import java.lang.String;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class ModelWithDataBindingBindingModel_ extends DataBindingEpoxyModel implements GeneratedModel<DataBindingEpoxyModel.DataBindingHolder>, ModelWithDataBindingBindingModelBuilder {
   private OnModelBoundListener<ModelWithDataBindingBindingModel_, DataBindingEpoxyModel.DataBindingHolder> onModelBoundListener_epoxyGeneratedModel;
 
@@ -49,7 +50,8 @@ public class ModelWithDataBindingBindingModel_ extends DataBindingEpoxyModel imp
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public ModelWithDataBindingBindingModel_ onBind(
       OnModelBoundListener<ModelWithDataBindingBindingModel_, DataBindingEpoxyModel.DataBindingHolder> listener) {
     onMutation();
@@ -71,7 +73,8 @@ public class ModelWithDataBindingBindingModel_ extends DataBindingEpoxyModel imp
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public ModelWithDataBindingBindingModel_ onUnbind(
       OnModelUnboundListener<ModelWithDataBindingBindingModel_, DataBindingEpoxyModel.DataBindingHolder> listener) {
     onMutation();
@@ -93,8 +96,7 @@ public class ModelWithDataBindingBindingModel_ extends DataBindingEpoxyModel imp
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public ModelWithDataBindingBindingModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<ModelWithDataBindingBindingModel_, DataBindingEpoxyModel.DataBindingHolder> listener) {
     onMutation();
@@ -116,8 +118,7 @@ public class ModelWithDataBindingBindingModel_ extends DataBindingEpoxyModel imp
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public ModelWithDataBindingBindingModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<ModelWithDataBindingBindingModel_, DataBindingEpoxyModel.DataBindingHolder> listener) {
     onMutation();
@@ -271,13 +272,13 @@ public class ModelWithDataBindingBindingModel_ extends DataBindingEpoxyModel imp
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (stringValue != null ? stringValue.hashCode() : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (stringValue != null ? stringValue.hashCode() : 0);
+    return _result;
   }
 
   @Override

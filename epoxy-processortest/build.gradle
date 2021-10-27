@@ -1,7 +1,4 @@
-import org.gradle.internal.jvm.Jvm
-
 apply plugin: 'com.android.library'
-apply from: rootProject.file('gradle/build.workaround-missing-resource.gradle')
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
@@ -9,34 +6,46 @@ android {
   compileSdkVersion rootProject.COMPILE_SDK_VERSION
 
   defaultConfig {
-    minSdkVersion rootProject.MIN_SDK_VERSION
+    // Using 16 here as it is the minimum version of Paris, which we are restricted to.
+    minSdkVersion 16
     targetSdkVersion rootProject.TARGET_SDK_VERSION
+  }
 
-    javaCompileOptions {
-      annotationProcessorOptions {
-        includeCompileClasspath false
-      }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
+
+  testOptions {
+    unitTests {
+      includeAndroidResources = true
     }
   }
 
   dataBinding {
     enabled = true
   }
-
-  defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
 }
 
 dependencies {
-  implementation rootProject.deps.kotlin
   implementation rootProject.deps.androidRecyclerView
   implementation project(':epoxy-annotations')
   implementation project(':epoxy-adapter')
   implementation project(':epoxy-databinding')
   implementation project(':epoxy-processortest2')
+  // The processor uses coroutines, and for some reason we need to include it here too for the
+  // compiler tester to be able to instantiate the processor, otherwise the coroutine classes
+  // aren't found.
+  implementation rootProject.deps.kotlinCoroutines
 
   kapt project(':epoxy-processor')
-  // Need to include the processor directly since we create an instance of it in code for testing
-  testImplementation project(':epoxy-processor')
+  // Need to include the processor directly as well since we create an instance of it in code for testing
+  implementation project(':epoxy-processor')
+
 
   implementation rootProject.deps.paris
   kapt rootProject.deps.parisProcessor
@@ -45,21 +54,22 @@ dependencies {
 
   kapt rootProject.deps.autoValue
 
-  testImplementation files(getRuntimeJar())
-  testImplementation files(Jvm.current().getToolsJar())
+  testImplementation files(rootProject.file("libs/rt.jar"))
+  testImplementation files(rootProject.file("libs/tools.jar"))
   testImplementation rootProject.deps.googleTestingCompile
 }
 
-static def getRuntimeJar() {
-  try {
-    final File javaBase = new File(System.getProperty("java.home")).getCanonicalFile()
-    File runtimeJar = new File(javaBase, "lib/rt.jar")
-    if (runtimeJar.exists()) {
-      return runtimeJar
-    }
-    runtimeJar = new File(javaBase, "jre/lib/rt.jar")
-    return runtimeJar.exists() ? runtimeJar : null
-  } catch (IOException e) {
-    throw new RuntimeException(e)
-  }
+// Java files in the "resources" folder are not included in the build for some reason (seems like source files are skipped?)
+// This files are needed to test the annotation processor, so we manually copy them into the build.
+task('copyDebugTestResources', type: Copy) {
+  from("${projectDir}/src/test/resources")
+  into("${buildDir}/intermediates/sourceFolderJavaResources/debug")
 }
+
+task('copyReleaseTestResources', type: Copy) {
+  from("${projectDir}/src/test/resources")
+  into("${buildDir}/intermediates/sourceFolderJavaResources/release")
+}
+
+preBuild.dependsOn copyReleaseTestResources
+preBuild.dependsOn copyDebugTestResources

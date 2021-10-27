@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import androidx.annotation.LayoutRes;
@@ -9,7 +10,8 @@ import java.lang.Override;
 import java.lang.String;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClassAndAnnotation implements GeneratedModel<Object>, ModelWithAbstractClassAndAnnotationBuilder {
   private OnModelBoundListener<ModelWithAbstractClassAndAnnotation_, Object> onModelBoundListener_epoxyGeneratedModel;
 
@@ -48,7 +50,8 @@ public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClass
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public ModelWithAbstractClassAndAnnotation_ onBind(
       OnModelBoundListener<ModelWithAbstractClassAndAnnotation_, Object> listener) {
     onMutation();
@@ -70,7 +73,8 @@ public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClass
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public ModelWithAbstractClassAndAnnotation_ onUnbind(
       OnModelUnboundListener<ModelWithAbstractClassAndAnnotation_, Object> listener) {
     onMutation();
@@ -91,8 +95,7 @@ public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClass
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public ModelWithAbstractClassAndAnnotation_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<ModelWithAbstractClassAndAnnotation_, Object> listener) {
     onMutation();
@@ -114,8 +117,7 @@ public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClass
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public ModelWithAbstractClassAndAnnotation_ onVisibilityChanged(
       OnModelVisibilityChangedListener<ModelWithAbstractClassAndAnnotation_, Object> listener) {
     onMutation();
@@ -130,8 +132,8 @@ public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClass
   }
 
   @Override
-  public ModelWithAbstractClassAndAnnotation_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public ModelWithAbstractClassAndAnnotation_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -142,34 +144,34 @@ public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClass
   }
 
   @Override
-  public ModelWithAbstractClassAndAnnotation_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public ModelWithAbstractClassAndAnnotation_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public ModelWithAbstractClassAndAnnotation_ id(@Nullable CharSequence arg0,
-      @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public ModelWithAbstractClassAndAnnotation_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public ModelWithAbstractClassAndAnnotation_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public ModelWithAbstractClassAndAnnotation_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public ModelWithAbstractClassAndAnnotation_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public ModelWithAbstractClassAndAnnotation_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public ModelWithAbstractClassAndAnnotation_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -230,12 +232,12 @@ public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClass
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    return _result;
   }
 
   @Override
@@ -244,3 +246,4 @@ public class ModelWithAbstractClassAndAnnotation_ extends ModelWithAbstractClass
         "}" + super.toString();
   }
 }
+

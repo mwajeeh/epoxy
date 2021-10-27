@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import android.content.Context;
@@ -23,7 +24,8 @@ import java.util.BitSet;
 import java.util.List;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> implements GeneratedModel<TestManyTypesView>, TestManyTypesViewModelBuilder {
   private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(14);
 
@@ -36,41 +38,30 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
   private OnModelVisibilityChangedListener<TestManyTypesViewModel_, TestManyTypesView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
   /**
-   * Bitset index: 0 */
+   * Bitset index: 0
+   */
   @NonNull
   private String stringValue_String;
 
-  /**
-   * Bitset index: 1 */
   @Nullable
   private String nullableStringValue_String = (String) null;
 
-  /**
-   * Bitset index: 2 */
   private int intValue_Int = 0;
 
-  /**
-   * Bitset index: 3 */
   @StringRes
   private int intValueWithAnnotation_Int = 0;
 
-  /**
-   * Bitset index: 4 */
   @IntRange(
       from = 0,
       to = 200
   )
   private int intValueWithRangeAnnotation_Int = 0;
 
-  /**
-   * Bitset index: 5 */
   @Dimension(
       unit = 0
   )
   private int intValueWithDimenTypeAnnotation_Int = 0;
 
-  /**
-   * Bitset index: 6 */
   @IntRange(
       from = 0,
       to = 200
@@ -81,36 +72,37 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
   private int intWithMultipleAnnotations_Int = 0;
 
   /**
-   * Bitset index: 7 */
+   * Bitset index: 7
+   */
   @NonNull
   private Integer integerValue_Integer;
 
-  /**
-   * Bitset index: 8 */
   private boolean boolValue_Boolean = false;
 
   /**
-   * Bitset index: 9 */
+   * Bitset index: 9
+   */
   @NonNull
   private Boolean booleanValue_Boolean;
 
   /**
-   * Bitset index: 10 */
+   * Bitset index: 10
+   */
   @NonNull
   private String[] arrayValue_StringArray;
 
   /**
-   * Bitset index: 11 */
+   * Bitset index: 11
+   */
   @NonNull
   private List<String> listValue_List;
 
   /**
-   * Bitset index: 12 */
+   * Bitset index: 12
+   */
   @NonNull
   private View.OnClickListener clickListener_OnClickListener;
 
-  /**
-   * Bitset index: 13 */
   private StringAttributeData title_StringAttributeData =  new StringAttributeData((CharSequence) null);
 
   @Override
@@ -242,7 +234,8 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestManyTypesViewModel_ onBind(
       OnModelBoundListener<TestManyTypesViewModel_, TestManyTypesView> listener) {
     onMutation();
@@ -264,7 +257,8 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestManyTypesViewModel_ onUnbind(
       OnModelUnboundListener<TestManyTypesViewModel_, TestManyTypesView> listener) {
     onMutation();
@@ -285,8 +279,7 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestManyTypesViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<TestManyTypesViewModel_, TestManyTypesView> listener) {
     onMutation();
@@ -308,8 +301,7 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestManyTypesViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<TestManyTypesViewModel_, TestManyTypesView> listener) {
     onMutation();
@@ -343,7 +335,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    * @see TestManyTypesView#setNullableStringValue(String)
    */
   public TestManyTypesViewModel_ nullableStringValue(@Nullable String nullableStringValue) {
-    assignedAttributes_epoxyGeneratedModel.set(1);
     onMutation();
     this.nullableStringValue_String = nullableStringValue;
     return this;
@@ -360,7 +351,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    * @see TestManyTypesView#setIntValue(int)
    */
   public TestManyTypesViewModel_ intValue(int intValue) {
-    assignedAttributes_epoxyGeneratedModel.set(2);
     onMutation();
     this.intValue_Int = intValue;
     return this;
@@ -376,7 +366,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    * @see TestManyTypesView#setIntValueWithAnnotation(int)
    */
   public TestManyTypesViewModel_ intValueWithAnnotation(@StringRes int intValueWithAnnotation) {
-    assignedAttributes_epoxyGeneratedModel.set(3);
     onMutation();
     this.intValueWithAnnotation_Int = intValueWithAnnotation;
     return this;
@@ -394,7 +383,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    */
   public TestManyTypesViewModel_ intValueWithRangeAnnotation(
       @IntRange(from = 0, to = 200) int intValueWithRangeAnnotation) {
-    assignedAttributes_epoxyGeneratedModel.set(4);
     onMutation();
     this.intValueWithRangeAnnotation_Int = intValueWithRangeAnnotation;
     return this;
@@ -415,7 +403,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    */
   public TestManyTypesViewModel_ intValueWithDimenTypeAnnotation(
       @Dimension(unit = 0) int intValueWithDimenTypeAnnotation) {
-    assignedAttributes_epoxyGeneratedModel.set(5);
     onMutation();
     this.intValueWithDimenTypeAnnotation_Int = intValueWithDimenTypeAnnotation;
     return this;
@@ -435,7 +422,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    */
   public TestManyTypesViewModel_ intWithMultipleAnnotations(
       @IntRange(from = 0, to = 200) @Dimension(unit = 0) int intWithMultipleAnnotations) {
-    assignedAttributes_epoxyGeneratedModel.set(6);
     onMutation();
     this.intWithMultipleAnnotations_Int = intWithMultipleAnnotations;
     return this;
@@ -478,7 +464,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    * @see TestManyTypesView#setBoolValue(boolean)
    */
   public TestManyTypesViewModel_ boolValue(boolean boolValue) {
-    assignedAttributes_epoxyGeneratedModel.set(8);
     onMutation();
     this.boolValue_Boolean = boolValue;
     return this;
@@ -549,7 +534,8 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
   }
 
   /**
-   * Set a click listener that will provide the parent view, model, and adapter position of the clicked view. This will clear the normal View.OnClickListener if one has been set */
+   * Set a click listener that will provide the parent view, model, and adapter position of the clicked view. This will clear the normal View.OnClickListener if one has been set
+   */
   public TestManyTypesViewModel_ clickListener(
       @NonNull final OnModelClickListener<TestManyTypesViewModel_, TestManyTypesView> clickListener) {
     assignedAttributes_epoxyGeneratedModel.set(12);
@@ -595,7 +581,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    */
   public TestManyTypesViewModel_ title(@Nullable CharSequence title) {
     onMutation();
-    assignedAttributes_epoxyGeneratedModel.set(13);
     title_StringAttributeData.setValue(title);
     return this;
   }
@@ -609,7 +594,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    */
   public TestManyTypesViewModel_ title(@StringRes int stringRes) {
     onMutation();
-    assignedAttributes_epoxyGeneratedModel.set(13);
     title_StringAttributeData.setValue(stringRes);
     return this;
   }
@@ -623,7 +607,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
    */
   public TestManyTypesViewModel_ title(@StringRes int stringRes, Object... formatArgs) {
     onMutation();
-    assignedAttributes_epoxyGeneratedModel.set(13);
     title_StringAttributeData.setValue(stringRes, formatArgs);
     return this;
   }
@@ -638,7 +621,6 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
   public TestManyTypesViewModel_ titleQuantityRes(@PluralsRes int pluralRes, int quantity,
       Object... formatArgs) {
     onMutation();
-    assignedAttributes_epoxyGeneratedModel.set(13);
     title_StringAttributeData.setValue(pluralRes, quantity, formatArgs);
     return this;
   }
@@ -650,8 +632,8 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
   }
 
   @Override
-  public TestManyTypesViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public TestManyTypesViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -662,33 +644,34 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
   }
 
   @Override
-  public TestManyTypesViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public TestManyTypesViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public TestManyTypesViewModel_ id(@Nullable CharSequence arg0, @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public TestManyTypesViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public TestManyTypesViewModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public TestManyTypesViewModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public TestManyTypesViewModel_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public TestManyTypesViewModel_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public TestManyTypesViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -812,26 +795,26 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (stringValue_String != null ? stringValue_String.hashCode() : 0);
-    result = 31 * result + (nullableStringValue_String != null ? nullableStringValue_String.hashCode() : 0);
-    result = 31 * result + intValue_Int;
-    result = 31 * result + intValueWithAnnotation_Int;
-    result = 31 * result + intValueWithRangeAnnotation_Int;
-    result = 31 * result + intValueWithDimenTypeAnnotation_Int;
-    result = 31 * result + intWithMultipleAnnotations_Int;
-    result = 31 * result + (integerValue_Integer != null ? integerValue_Integer.hashCode() : 0);
-    result = 31 * result + (boolValue_Boolean ? 1 : 0);
-    result = 31 * result + (booleanValue_Boolean != null ? booleanValue_Boolean.hashCode() : 0);
-    result = 31 * result + Arrays.hashCode(arrayValue_StringArray);
-    result = 31 * result + (listValue_List != null ? listValue_List.hashCode() : 0);
-    result = 31 * result + (clickListener_OnClickListener != null ? 1 : 0);
-    result = 31 * result + (title_StringAttributeData != null ? title_StringAttributeData.hashCode() : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (stringValue_String != null ? stringValue_String.hashCode() : 0);
+    _result = 31 * _result + (nullableStringValue_String != null ? nullableStringValue_String.hashCode() : 0);
+    _result = 31 * _result + intValue_Int;
+    _result = 31 * _result + intValueWithAnnotation_Int;
+    _result = 31 * _result + intValueWithRangeAnnotation_Int;
+    _result = 31 * _result + intValueWithDimenTypeAnnotation_Int;
+    _result = 31 * _result + intWithMultipleAnnotations_Int;
+    _result = 31 * _result + (integerValue_Integer != null ? integerValue_Integer.hashCode() : 0);
+    _result = 31 * _result + (boolValue_Boolean ? 1 : 0);
+    _result = 31 * _result + (booleanValue_Boolean != null ? booleanValue_Boolean.hashCode() : 0);
+    _result = 31 * _result + Arrays.hashCode(arrayValue_StringArray);
+    _result = 31 * _result + (listValue_List != null ? listValue_List.hashCode() : 0);
+    _result = 31 * _result + (clickListener_OnClickListener != null ? 1 : 0);
+    _result = 31 * _result + (title_StringAttributeData != null ? title_StringAttributeData.hashCode() : 0);
+    return _result;
   }
 
   @Override
@@ -859,3 +842,4 @@ public class TestManyTypesViewModel_ extends EpoxyModel<TestManyTypesView> imple
     return totalSpanCount;
   }
 }
+

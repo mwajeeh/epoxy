@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import android.view.View;
@@ -8,13 +9,11 @@ import java.lang.Number;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
-import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView> implements GeneratedModel<TestCallbackPropView>, TestCallbackPropViewModelBuilder {
-  private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(1);
-
   private OnModelBoundListener<TestCallbackPropViewModel_, TestCallbackPropView> onModelBoundListener_epoxyGeneratedModel;
 
   private OnModelUnboundListener<TestCallbackPropViewModel_, TestCallbackPropView> onModelUnboundListener_epoxyGeneratedModel;
@@ -23,8 +22,6 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
 
   private OnModelVisibilityChangedListener<TestCallbackPropViewModel_, TestCallbackPropView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
-  /**
-   * Bitset index: 0 */
   @Nullable
   private View.OnClickListener listener_OnClickListener = (View.OnClickListener) null;
 
@@ -74,7 +71,8 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestCallbackPropViewModel_ onBind(
       OnModelBoundListener<TestCallbackPropViewModel_, TestCallbackPropView> listener) {
     onMutation();
@@ -97,7 +95,8 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestCallbackPropViewModel_ onUnbind(
       OnModelUnboundListener<TestCallbackPropViewModel_, TestCallbackPropView> listener) {
     onMutation();
@@ -118,8 +117,7 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestCallbackPropViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<TestCallbackPropViewModel_, TestCallbackPropView> listener) {
     onMutation();
@@ -141,8 +139,7 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestCallbackPropViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<TestCallbackPropViewModel_, TestCallbackPropView> listener) {
     onMutation();
@@ -151,10 +148,10 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
   }
 
   /**
-   * Set a click listener that will provide the parent view, model, and adapter position of the clicked view. This will clear the normal View.OnClickListener if one has been set */
+   * Set a click listener that will provide the parent view, model, and adapter position of the clicked view. This will clear the normal View.OnClickListener if one has been set
+   */
   public TestCallbackPropViewModel_ listener(
       @Nullable final OnModelClickListener<TestCallbackPropViewModel_, TestCallbackPropView> listener) {
-    assignedAttributes_epoxyGeneratedModel.set(0);
     onMutation();
     if (listener == null) {
       this.listener_OnClickListener = null;
@@ -171,7 +168,6 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
    * @see TestCallbackPropView#setListener(View.OnClickListener)
    */
   public TestCallbackPropViewModel_ listener(@Nullable View.OnClickListener listener) {
-    assignedAttributes_epoxyGeneratedModel.set(0);
     onMutation();
     this.listener_OnClickListener = listener;
     return this;
@@ -189,8 +185,8 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
   }
 
   @Override
-  public TestCallbackPropViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public TestCallbackPropViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -201,34 +197,34 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
   }
 
   @Override
-  public TestCallbackPropViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public TestCallbackPropViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public TestCallbackPropViewModel_ id(@Nullable CharSequence arg0,
-      @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public TestCallbackPropViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public TestCallbackPropViewModel_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public TestCallbackPropViewModel_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public TestCallbackPropViewModel_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public TestCallbackPropViewModel_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public TestCallbackPropViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -262,7 +258,6 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
     onModelUnboundListener_epoxyGeneratedModel = null;
     onModelVisibilityStateChangedListener_epoxyGeneratedModel = null;
     onModelVisibilityChangedListener_epoxyGeneratedModel = null;
-    assignedAttributes_epoxyGeneratedModel.clear();
     this.listener_OnClickListener = (View.OnClickListener) null;
     super.reset();
     return this;
@@ -300,13 +295,13 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (listener_OnClickListener != null ? 1 : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (listener_OnClickListener != null ? 1 : 0);
+    return _result;
   }
 
   @Override
@@ -321,3 +316,4 @@ public class TestCallbackPropViewModel_ extends EpoxyModel<TestCallbackPropView>
     return totalSpanCount;
   }
 }
+

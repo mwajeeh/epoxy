@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import javax.tools.JavaFileObject;
 
+import static com.airbnb.epoxy.ProcessorTestUtils.processors;
 import static com.google.common.truth.Truth.assert_;
 import static com.google.testing.compile.JavaSourcesSubjectFactory.javaSources;
 import static java.util.Arrays.asList;
@@ -73,14 +74,14 @@ public class DataBindingModelTest {
   @Test
   public void testSimpleModel() {
     JavaFileObject model = JavaFileObjects
-        .forResource("DataBindingModelWithAllFieldTypes.java");
+        .forResource(GuavaPatch.patchResource("DataBindingModelWithAllFieldTypes.java"));
 
     JavaFileObject generatedModel =
-        JavaFileObjects.forResource("DataBindingModelWithAllFieldTypes_.java");
+        JavaFileObjects.forResource(GuavaPatch.patchResource("DataBindingModelWithAllFieldTypes_.java"));
 
     assert_().about(javaSources())
         .that(asList(model, BR_CLASS, R))
-        .processedWith(new EpoxyProcessor())
+        .processedWith(processors())
         .compilesWithoutError()
         .and()
         .generatesSources(generatedModel);
@@ -89,56 +90,15 @@ public class DataBindingModelTest {
   @Test
   public void testSimpleModelNoValidation() {
     JavaFileObject model = JavaFileObjects
-        .forResource("DataBindingModelWithAllFieldTypesNoValidation.java");
+        .forResource(GuavaPatch.patchResource("DataBindingModelWithAllFieldTypesNoValidation.java"));
 
     JavaFileObject generatedModel =
-        JavaFileObjects.forResource("DataBindingModelWithAllFieldTypesNoValidation_.java");
+        JavaFileObjects.forResource(GuavaPatch.patchResource("DataBindingModelWithAllFieldTypesNoValidation_.java"));
 
     assert_().about(javaSources())
         .that(asList(model, BR_CLASS, R))
-        .processedWith(EpoxyProcessor.withNoValidation())
-        .compilesWithoutError()
-        .and()
-        .generatesSources(generatedModel);
-  }
-
-  @Test
-  public void testFullyGeneratedModel() {
-    JavaFileObject packageInfo = JavaFileObjects
-        .forResource("package-info.java");
-
-    JavaFileObject binding = JavaFileObjects
-        .forResource("ModelWithDataBindingBinding.java");
-
-    JavaFileObject generatedModel =
-        JavaFileObjects.forResource("ModelWithDataBindingBindingModel_.java");
-
-    assert_().about(javaSources())
-        .that(asList(packageInfo, binding, BR_CLASS, R))
-        .processedWith(new EpoxyProcessor())
-        .compilesWithoutError()
-        .and()
-        .generatesSources(generatedModel);
-  }
-
-  @Test
-  public void testFullyGeneratedModelWithoutDoNotHash() {
-    JavaFileObject packageInfo = JavaFileObjects
-        .forSourceString("com.airbnb.epoxy.package-info",
-            "@EpoxyDataBindingLayouts(value = {R.layout"
-                + ".model_with_data_binding_without_donothash}, enableDoNotHash = false)\n"
-                + "package com.airbnb.epoxy;\n"
-        );
-
-    JavaFileObject binding = JavaFileObjects
-        .forResource("ModelWithDataBindingWithoutDonothashBinding.java");
-
-    JavaFileObject generatedModel =
-        JavaFileObjects.forResource("ModelWithDataBindingWithoutDonothashBindingModel_.java");
-
-    assert_().about(javaSources())
-        .that(asList(packageInfo, binding, BR_CLASS, R))
-        .processedWith(new EpoxyProcessor())
+        .withCompilerOptions(ProcessorTestUtils.options(true, false))
+        .processedWith(processors())
         .compilesWithoutError()
         .and()
         .generatesSources(generatedModel);

@@ -1,5 +1,7 @@
+
 package com.airbnb.epoxy;
 
+import android.view.ViewParent;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import java.lang.CharSequence;
@@ -9,7 +11,8 @@ import java.lang.Override;
 import java.lang.String;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements GeneratedModel<AbstractModelWithHolder.Holder>, AbstractModelWithHolderBuilder {
   private OnModelBoundListener<AbstractModelWithHolder_, AbstractModelWithHolder.Holder> onModelBoundListener_epoxyGeneratedModel;
 
@@ -49,7 +52,8 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public AbstractModelWithHolder_ onBind(
       OnModelBoundListener<AbstractModelWithHolder_, AbstractModelWithHolder.Holder> listener) {
     onMutation();
@@ -71,7 +75,8 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public AbstractModelWithHolder_ onUnbind(
       OnModelUnboundListener<AbstractModelWithHolder_, AbstractModelWithHolder.Holder> listener) {
     onMutation();
@@ -93,8 +98,7 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public AbstractModelWithHolder_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<AbstractModelWithHolder_, AbstractModelWithHolder.Holder> listener) {
     onMutation();
@@ -116,8 +120,7 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public AbstractModelWithHolder_ onVisibilityChanged(
       OnModelVisibilityChangedListener<AbstractModelWithHolder_, AbstractModelWithHolder.Holder> listener) {
     onMutation();
@@ -142,8 +145,8 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
   }
 
   @Override
-  public AbstractModelWithHolder_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public AbstractModelWithHolder_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -154,33 +157,34 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
   }
 
   @Override
-  public AbstractModelWithHolder_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public AbstractModelWithHolder_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public AbstractModelWithHolder_ id(@Nullable CharSequence arg0, @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public AbstractModelWithHolder_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public AbstractModelWithHolder_ id(@Nullable CharSequence arg0, long arg1) {
-    super.id(arg0, arg1);
+  public AbstractModelWithHolder_ id(@Nullable CharSequence key, long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public AbstractModelWithHolder_ layout(@LayoutRes int arg0) {
-    super.layout(arg0);
+  public AbstractModelWithHolder_ layout(@LayoutRes int layoutRes) {
+    super.layout(layoutRes);
     return this;
   }
 
   @Override
   public AbstractModelWithHolder_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -203,7 +207,7 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
   }
 
   @Override
-  protected AbstractModelWithHolder.Holder createNewHolder() {
+  protected AbstractModelWithHolder.Holder createNewHolder(ViewParent parent) {
     return new AbstractModelWithHolder.Holder();
   }
 
@@ -250,13 +254,13 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + value;
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + value;
+    return _result;
   }
 
   @Override
@@ -266,3 +270,4 @@ public class AbstractModelWithHolder_ extends AbstractModelWithHolder implements
         "}" + super.toString();
   }
 }
+

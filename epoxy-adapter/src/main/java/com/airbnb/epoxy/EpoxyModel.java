@@ -20,7 +20,10 @@ import static com.airbnb.epoxy.IdUtils.hashString64Bit;
 
 /**
  * Helper to bind data to a view using a builder style. The parameterized type should extend
- * Android's View.
+ * Android's View or EpoxyHolder.
+ *
+ * @see EpoxyModelWithHolder
+ * @see EpoxyModelWithView
  */
 public abstract class EpoxyModel<T> {
 
@@ -53,7 +56,7 @@ public abstract class EpoxyModel<T> {
   /**
    * Models are staged when they are changed. This allows them to be automatically added when they
    * are done being changed (eg the next model is changed/added or buildModels finishes). It is only
-   * allowed for AutoModels, and only if implicity adding is enabled.
+   * allowed for AutoModels, and only if implicit adding is enabled.
    */
   EpoxyController controllerToStageTo;
   private boolean currentlyInInterceptors;
@@ -90,8 +93,45 @@ public abstract class EpoxyModel<T> {
    * Create and return a new instance of a view for this model. By default a view is created by
    * inflating the layout resource.
    */
-  protected View buildView(@NonNull ViewGroup parent) {
+  public View buildView(@NonNull ViewGroup parent) {
     return LayoutInflater.from(parent.getContext()).inflate(getLayout(), parent, false);
+  }
+
+  /**
+   * Hook that is called before {@link #bind(Object)}. This is similar to
+   * {@link GeneratedModel#handlePreBind(EpoxyViewHolder, Object, int)}, but is intended for
+   * subclasses of EpoxyModel to hook into rather than for generated code to hook into.
+   * Overriding preBind is useful to capture state before the view changes, e.g. for animations.
+   *
+   * @param previouslyBoundModel This is a model with the same id that was previously bound. You can
+   *                             compare this previous model with the current one to see exactly
+   *                             what changed.
+   *                             <p>
+   *                             This model and the previously bound model are guaranteed to have
+   *                             the same id, but will not necessarily be of the same type depending
+   *                             on your implementation of {@link EpoxyController#buildModels()}.
+   *                             With common usage patterns of Epoxy they should be the same type,
+   *                             and will only differ if you are using different model classes with
+   *                             the same id.
+   *                             <p>
+   *                             Comparing the newly bound model with the previous model allows you
+   *                             to be more intelligent when binding your view. This may help you
+   *                             optimize view binding, or make it easier to work with animations.
+   *                             <p>
+   *                             If the new model and the previous model have the same view type
+   *                             (given by {@link EpoxyModel#getViewType()}), and if you are using
+   *                             the default ReyclerView item animator, the same view will be
+   *                             reused. This means that you only need to update the view to reflect
+   *                             the data that changed. If you are using a custom item animator then
+   *                             the view will be the same if the animator returns true in
+   *                             canReuseUpdatedViewHolder.
+   *                             <p>
+   *                             This previously bound model is taken as a payload from the diffing
+   *                             process, and follows the same general conditions for all
+   *                             recyclerview change payloads.
+   */
+  public void preBind(@NonNull T view, @Nullable EpoxyModel<?> previouslyBoundModel) {
+
   }
 
   /**

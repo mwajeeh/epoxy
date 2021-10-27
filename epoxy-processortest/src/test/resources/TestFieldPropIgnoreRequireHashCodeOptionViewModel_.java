@@ -1,3 +1,4 @@
+
 package com.airbnb.epoxy;
 
 import android.view.View;
@@ -16,7 +17,8 @@ import java.lang.UnsupportedOperationException;
 import java.util.BitSet;
 
 /**
- * Generated file. Do not modify! */
+ * Generated file. Do not modify!
+ */
 public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyModel<TestFieldPropIgnoreRequireHashCodeOptionView> implements GeneratedModel<TestFieldPropIgnoreRequireHashCodeOptionView>, TestFieldPropIgnoreRequireHashCodeOptionViewModelBuilder {
   private final BitSet assignedAttributes_epoxyGeneratedModel = new BitSet(1);
 
@@ -29,7 +31,8 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
   private OnModelVisibilityChangedListener<TestFieldPropIgnoreRequireHashCodeOptionViewModel_, TestFieldPropIgnoreRequireHashCodeOptionView> onModelVisibilityChangedListener_epoxyGeneratedModel;
 
   /**
-   * Bitset index: 0 */
+   * Bitset index: 0
+   */
   @NonNull
   private View.OnClickListener value_OnClickListener;
 
@@ -48,7 +51,7 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
   }
 
   @Override
-  protected TestFieldPropIgnoreRequireHashCodeOptionView buildView(ViewGroup parent) {
+  public TestFieldPropIgnoreRequireHashCodeOptionView buildView(ViewGroup parent) {
     TestFieldPropIgnoreRequireHashCodeOptionView v = new TestFieldPropIgnoreRequireHashCodeOptionView(parent.getContext());
     v.setLayoutParams(new ViewGroup.MarginLayoutParams(ViewGroup.MarginLayoutParams.WRAP_CONTENT, ViewGroup.MarginLayoutParams.WRAP_CONTENT));
     return v;
@@ -97,7 +100,8 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ onBind(
       OnModelBoundListener<TestFieldPropIgnoreRequireHashCodeOptionViewModel_, TestFieldPropIgnoreRequireHashCodeOptionView> listener) {
     onMutation();
@@ -119,7 +123,8 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
    * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   * You may clear the listener by setting a null value, or by calling {@link #reset()}
+   */
   public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ onUnbind(
       OnModelUnboundListener<TestFieldPropIgnoreRequireHashCodeOptionViewModel_, TestFieldPropIgnoreRequireHashCodeOptionView> listener) {
     onMutation();
@@ -141,8 +146,7 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ onVisibilityStateChanged(
       OnModelVisibilityStateChangedListener<TestFieldPropIgnoreRequireHashCodeOptionViewModel_, TestFieldPropIgnoreRequireHashCodeOptionView> listener) {
     onMutation();
@@ -165,8 +169,7 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
    * <p>
    * The listener will contribute to this model's hashCode state per the {@link
    * com.airbnb.epoxy.EpoxyAttribute.Option#DoNotHash} rules.
-   * <p>
-   * You may clear the listener by setting a null value, or by calling {@link #reset()} */
+   */
   public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ onVisibilityChanged(
       OnModelVisibilityChangedListener<TestFieldPropIgnoreRequireHashCodeOptionViewModel_, TestFieldPropIgnoreRequireHashCodeOptionView> listener) {
     onMutation();
@@ -175,7 +178,8 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
   }
 
   /**
-   * Set a click listener that will provide the parent view, model, and adapter position of the clicked view. This will clear the normal View.OnClickListener if one has been set */
+   * Set a click listener that will provide the parent view, model, and adapter position of the clicked view. This will clear the normal View.OnClickListener if one has been set
+   */
   public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ value(
       @NonNull final OnModelClickListener<TestFieldPropIgnoreRequireHashCodeOptionViewModel_, TestFieldPropIgnoreRequireHashCodeOptionView> value) {
     assignedAttributes_epoxyGeneratedModel.set(0);
@@ -217,8 +221,8 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
   }
 
   @Override
-  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ id(@Nullable Number... arg0) {
-    super.id(arg0);
+  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ id(@Nullable Number... ids) {
+    super.id(ids);
     return this;
   }
 
@@ -229,34 +233,34 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
   }
 
   @Override
-  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ id(@Nullable CharSequence arg0) {
-    super.id(arg0);
+  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ id(@Nullable CharSequence key) {
+    super.id(key);
     return this;
   }
 
   @Override
-  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ id(@Nullable CharSequence arg0,
-      @Nullable CharSequence... arg1) {
-    super.id(arg0, arg1);
+  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ id(@Nullable CharSequence key,
+      @Nullable CharSequence... otherKeys) {
+    super.id(key, otherKeys);
     return this;
   }
 
   @Override
-  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ id(@Nullable CharSequence arg0,
-      long arg1) {
-    super.id(arg0, arg1);
+  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ id(@Nullable CharSequence key,
+      long id) {
+    super.id(key, id);
     return this;
   }
 
   @Override
-  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ layout(@LayoutRes int arg0) {
+  public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ layout(@LayoutRes int layoutRes) {
     throw new UnsupportedOperationException("Layout resources are unsupported with programmatic views.");
   }
 
   @Override
   public TestFieldPropIgnoreRequireHashCodeOptionViewModel_ spanSizeOverride(
-      @Nullable EpoxyModel.SpanSizeOverrideCallback arg0) {
-    super.spanSizeOverride(arg0);
+      @Nullable EpoxyModel.SpanSizeOverrideCallback spanSizeCallback) {
+    super.spanSizeOverride(spanSizeCallback);
     return this;
   }
 
@@ -328,13 +332,13 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
-    result = 31 * result + (value_OnClickListener != null ? value_OnClickListener.hashCode() : 0);
-    return result;
+    int _result = super.hashCode();
+    _result = 31 * _result + (onModelBoundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelUnboundListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityStateChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (onModelVisibilityChangedListener_epoxyGeneratedModel != null ? 1 : 0);
+    _result = 31 * _result + (value_OnClickListener != null ? value_OnClickListener.hashCode() : 0);
+    return _result;
   }
 
   @Override
@@ -349,3 +353,4 @@ public class TestFieldPropIgnoreRequireHashCodeOptionViewModel_ extends EpoxyMod
     return totalSpanCount;
   }
 }
+

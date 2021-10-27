@@ -4,14 +4,17 @@ import android.app.Activity
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.epoxy.EpoxyVisibilityTracker.DEBUG_LOG
+import com.airbnb.epoxy.EpoxyVisibilityTracker.Companion.DEBUG_LOG
 import com.airbnb.epoxy.VisibilityState.INVISIBLE
+import com.airbnb.epoxy.VisibilityState.PARTIAL_IMPRESSION_INVISIBLE
+import com.airbnb.epoxy.VisibilityState.PARTIAL_IMPRESSION_VISIBLE
 import com.airbnb.epoxy.VisibilityState.VISIBLE
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.Robolectric
+import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import org.robolectric.shadows.ShadowLog
 
@@ -28,8 +31,8 @@ private typealias TrackerTestModel = EpoxyVisibilityTrackerTest.TrackerTestModel
  * - `mdpi` for density factor 1
  * - `h831dp` where : 831 = 56 (ToolBar) + 775 (RecyclerView)
  */
-@Config(sdk = [21], manifest = TestRunner.MANIFEST_PATH, qualifiers = "h831dp-mdpi")
-@RunWith(TestRunner::class)
+@Config(sdk = [21], qualifiers = "h831dp-mdpi")
+@RunWith(RobolectricTestRunner::class)
 class EpoxyVisibilityTrackerNestedTest {
     companion object {
         private const val TAG = "EpoxyVisibilityTrackerNestedTest"
@@ -97,6 +100,7 @@ class EpoxyVisibilityTrackerNestedTest {
                                 percentVisibleHeight = 0.0f,
                                 percentVisibleWidth = 0.0f,
                                 visible = false,
+                                partialImpression = false,
                                 fullImpression = false,
                                 visitedStates = EpoxyVisibilityTrackerTest.ALL_STATES
                             )
@@ -109,9 +113,12 @@ class EpoxyVisibilityTrackerNestedTest {
                                 percentVisibleHeight = 0.0f,
                                 percentVisibleWidth = 0.0f,
                                 visible = false,
+                                partialImpression = false,
                                 fullImpression = false,
                                 visitedStates = intArrayOf(
                                     VISIBLE,
+                                    PARTIAL_IMPRESSION_VISIBLE,
+                                    PARTIAL_IMPRESSION_INVISIBLE,
                                     INVISIBLE
                                 )
                             )
@@ -126,8 +133,12 @@ class EpoxyVisibilityTrackerNestedTest {
                                 visibleHeight = 50,
                                 visibleWidth = 100,
                                 visible = true,
+                                partialImpression = true,
                                 fullImpression = false,
-                                visitedStates = intArrayOf(VISIBLE)
+                                visitedStates = intArrayOf(
+                                    VISIBLE,
+                                    PARTIAL_IMPRESSION_VISIBLE
+                                )
                             )
                         }
                     }
@@ -137,8 +148,12 @@ class EpoxyVisibilityTrackerNestedTest {
                                 visibleHeight = 50,
                                 visibleWidth = 50,
                                 visible = true,
+                                partialImpression = true,
                                 fullImpression = false,
-                                visitedStates = intArrayOf(VISIBLE)
+                                visitedStates = intArrayOf(
+                                    VISIBLE,
+                                    PARTIAL_IMPRESSION_VISIBLE
+                                )
                             )
                         }
                     }
@@ -151,6 +166,7 @@ class EpoxyVisibilityTrackerNestedTest {
                                 percentVisibleHeight = 100.0f,
                                 percentVisibleWidth = 100.0f,
                                 visible = false,
+                                partialImpression = true,
                                 fullImpression = true,
                                 visitedStates = EpoxyVisibilityTrackerTest.ALL_STATES
                             )
@@ -162,8 +178,12 @@ class EpoxyVisibilityTrackerNestedTest {
                                 percentVisibleHeight = 100.0f,
                                 percentVisibleWidth = 50.0f,
                                 visible = false,
+                                partialImpression = true,
                                 fullImpression = false,
-                                visitedStates = intArrayOf(VISIBLE)
+                                visitedStates = intArrayOf(
+                                    VISIBLE,
+                                    PARTIAL_IMPRESSION_VISIBLE
+                                )
                             )
                         }
                     }
@@ -188,11 +208,13 @@ class EpoxyVisibilityTrackerNestedTest {
         // Build a test sample of sampleSize items
         val helpers = mutableListOf<List<AssertHelper>>().apply {
             for (i in 0 until verticalSampleSize) {
-                add(mutableListOf<AssertHelper>().apply {
-                    for (j in 0 until horizontalSampleSize) {
-                        add(AssertHelper(ids++))
+                add(
+                    mutableListOf<AssertHelper>().apply {
+                        for (j in 0 until horizontalSampleSize) {
+                            add(AssertHelper(ids++))
+                        }
                     }
-                })
+                )
             }
         }
         log(helpers.ids())
@@ -206,35 +228,37 @@ class EpoxyVisibilityTrackerNestedTest {
     @Before
     fun setup() {
         Robolectric.setupActivity(Activity::class.java).apply {
-            setContentView(EpoxyRecyclerView(this).apply {
-                epoxyVisibilityTracker.attach(this)
-                recyclerView = this
-                // Plug an epoxy controller
-                epoxyController = object : TypedEpoxyController<List<List<AssertHelper>>>() {
-                    override fun buildModels(data: List<List<AssertHelper>>?) {
-                        data?.forEachIndexed { index, helpers ->
-                            val models = mutableListOf<EpoxyModel<*>>()
-                            helpers.forEach { helper ->
-                                models.add(
-                                    TrackerTestModel(
-                                        itemPosition = index,
-                                        itemHeight = itemHeight,
-                                        itemWidth = itemWidth,
-                                        helper = helper
-                                    ).id("$index-${helper.id}")
+            setContentView(
+                EpoxyRecyclerView(this).apply {
+                    epoxyVisibilityTracker.attach(this)
+                    recyclerView = this
+                    // Plug an epoxy controller
+                    epoxyController = object : TypedEpoxyController<List<List<AssertHelper>>>() {
+                        override fun buildModels(data: List<List<AssertHelper>>?) {
+                            data?.forEachIndexed { index, helpers ->
+                                val models = mutableListOf<EpoxyModel<*>>()
+                                helpers.forEach { helper ->
+                                    models.add(
+                                        TrackerTestModel(
+                                            itemPosition = index,
+                                            itemHeight = itemHeight,
+                                            itemWidth = itemWidth,
+                                            helper = helper
+                                        ).id("$index-${helper.id}")
+                                    )
+                                }
+                                add(
+                                    CarouselModel_()
+                                        .id(index)
+                                        .paddingDp(0)
+                                        .models(models)
                                 )
                             }
-                            add(
-                                CarouselModel_()
-                                    .id(index)
-                                    .paddingDp(0)
-                                    .models(models)
-                            )
                         }
                     }
+                    recyclerView.adapter = epoxyController.adapter
                 }
-                recyclerView.adapter = epoxyController.adapter
-            })
+            )
             viewportHeight = recyclerView.measuredHeight
             activity = this
         }

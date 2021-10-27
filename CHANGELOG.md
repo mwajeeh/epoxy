@@ -1,3 +1,242 @@
+# 4.6.4 (September 23, 2021)
+- Clean up dependency for the experimental epoxy module
+
+# 4.6.3 (September 11, 2021)
+- Add EpoxyModel#preBind hook(#1225)
+- Add unbind extension to ItemViewBindingEpoxyHolder (#1223)
+- Add missing loadStateFlow to PagingDataEpoxyController (#1209)
+
+# 4.6.2 (June 11, 2021)
+Fix Drag n Drop not working in 4.6.1 (#1195)
+
+# 4.6.1 (May 13, 2021)
+Adds "epoxyDisableDslMarker" annotation processor flag which you can use to delay migration to the model building scope DLSMarker introduced in 4.6.0 if it is a large breaking change for your project.
+
+Note that this only applies to your project modules that you apply it to, and does not apply to the handful of models that ship with the Epoxy library (like the Carousel or `group` builder).
+
+For example:
+```groovy
+project.android.buildTypes.all { buildType ->
+    buildType.javaCompileOptions.annotationProcessorOptions.arguments =
+            [
+                    epoxyDisableDslMarker     : "true",
+            ]
+}
+```
+
+# 4.6.0 (May 12, 2021)
+- View Binder Support (#1175) Bind epoxy models to views outside of a RecyclerView.
+
+### Potentially Breaking
+- Use kotlin dsl marker for model building receivers (#1180)
+
+This change uses Kotlin's DSL marker annotation to enforce proper usage of model building extension
+functions. You may now need to change some references in your model building code to explicitly reference properties with `this`.
+
+# 4.5.0 (April 13, 2021)
+- Fix generated code consistency in builder interfaces (#1166)
+- Provided support to invalidate `modelCache` in `PagingDataEpoxyController` (#1161)
+- Explicitly add public modifier (#1162)
+- Unwrap context to find parent activity in order to share viewpool when using Hilt (#1157)
+
+# 4.4.4 (Mar 24, 2021)
+- Provide support for snapshot() function in PagingDataEpoxyController (#1144)
+
+# 4.4.3 (Mar 17, 2021)
+- Fixed interface model related regression introduced in the previous release.
+
+# 4.4.2 (Mar 1, 2021)
+- Updated package name of the model class generated for an interface
+
+# 4.4.1 (Feb 22, 2021)
+- Support for Paging3 (#1126) (Thanks to @osipxd and @anhanh11001!)
+- Update KotlinPoet to 1.7.2 (#1117)
+
+# 4.4.0 (Feb 18, 2021)
+Bad release, don't use
+
+# 4.3.1 (Dec 2, 2020)
+- Fix ANR and view pool resolution in nested group (#1101)
+
+# 4.3.0 (Dec 1, 2020)
+- ModelGroupHolder get recycle pool from parent (#1097)
+- Add support for `EpoxyModelGroup` in the `EpoxyVisibilityTracker` (#1091)
+- Convert EpoxyVisibilityTracker code to Kotlin (#1090)
+
+## Breaking Changes
+Note that due to the conversion of EpoxyVisibilityTracker to kotlin you now need to access `EpoxyVisibilityTracker.partialImpressionThresholdPercentage` as a property
+`epoxyVisibilityTracker.setPartialImpressionThresholdPercentage(value)` -> `epoxyVisibilityTracker.partialImpressionThresholdPercentage = value`
+
+Also, the ModelGroupHolder improvement required the `ModelGroupHolder#createNewHolder` function to change its signature to accept a `ViewParent` parameter.
+
+If you override `createNewHolder()` anywhere you will need to change it to `createNewHolder(@NonNull ViewParent parent)`
+
+# 4.2.0 (Nov 11, 2020)
+- Add notify model changed method (#1063)
+- Update to Kotlin 1.4.20-RC and remove dependency on kotlin-android-extensions
+
+# 4.1.0 (Sept 17, 2020)
+- Fix some synchronization issues with the parallel Epoxy processing option
+- Add view visibility checks to EpoxyVisibilityItem and decouple RecyclerView #1052
+
+# 4.0.0 (Sept 5, 2020)
+
+## New
+- Incremental annotation processing for faster builds
+- Support for Android Jetpack Paging v3 library in new `epoxy-paging3` artifact
+- Model group building with Kotlin DSL (#1012)
+- A new annotation processor argument `logEpoxyTimings` can be set to get a detailed breakdown of how long the processors took and where they spent their time (off by default)
+- Another new argument `enableParallelEpoxyProcessing` can be set to true to have the annotation processor process annotations and generate files in parallel (via coroutines).
+
+You can enable these processor options in your build.gradle file like so:
+```
+project.android.buildTypes.all { buildType ->
+  buildType.javaCompileOptions.annotationProcessorOptions.arguments =
+      [
+          logEpoxyTimings  : "true",
+          enableParallelEpoxyProcessing     : "true"
+      ]
+}
+```
+
+Parallel processing can greatly speed up processing time (moreso than the incremental support), but given the hairy nature of parallel processing it is still incubating.
+Please report any issues or crashes that you notice.
+(We are currently using parallel mode in our large project at Airbnb with no problems.)
+
+- Add options to skip generation of functions for getters, reset, and method overloads to reduce generated code
+    - New annotation processor options are:
+        - epoxyDisableGenerateOverloads
+        - epoxyDisableGenerateGetters
+        - epoxyDisableGenerateReset
+
+
+## Fixes
+- Synchronize ListUpdateCallback and PagedListModelCache functions (#987)
+- Avoid generating bitset checks in models when not needed (reduces code size)
+- Fix minor memory leak
+
+## Breaking
+
+- Annotations that previously targeted package elements now target types (classes or interfaces).
+  This includes: `EpoxyDataBindingPattern`, `EpoxyDataBindingLayouts`, `PackageModelViewConfig`, `PackageEpoxyConfig`
+  This was necessary to work around an incremental annotation processor issue where annotation on package-info elements are not properly recompiled
+
+- In order to enable incremental annotation processing a change had to be made in how the processor of
+  `@AutoModel` annotations work. If you use `@AutoModel` in an EpoxyController the annotated Model types
+  must be either declared in a different module from the EpoxyController, or in the same module in the same java package.
+
+  Also make sure you have kapt error types enabled.
+
+  However, generally `@AutoModel` is considered legacy and is not recommended. It is a relic of Java Epoxy usage
+  and instead the current best practice is to use Kotlin with the Kotlin model extension functions to build models.
+
+- Removed support for generating Epoxy models from Litho components
+
+# 4.0.0-beta6 (July 15, 2020)
+- PackageModelViewConfig can now be applied to classes and interfaces in addition to package-info.java
+
+# 4.0.0-beta5 (July 9, 2020)
+Fixes:
+- An occasional processor crash when the option to log timings is enabled
+- Incremental annotation processing of databinding models would fail to generate models (#1014)
+
+Breaking!
+- The annotation that support databinding, `EpoxyDataBindingLayouts` and `EpoxyDataBindingPattern`,
+must now be placed on a class or interface instead of in a `package-info.java` file. The interface
+or class must be in Java, Kotlin is not supported. This is necessary to support incremental processing.
+
+Example usage:
+```java
+package com.example.app;
+
+import com.airbnb.epoxy.EpoxyDataBindingLayouts;
+import com.airbnb.epoxy.EpoxyDataBindingPattern;
+
+@EpoxyDataBindingPattern(rClass = R.class, layoutPrefix = "my_view_prefix")
+@EpoxyDataBindingLayouts({R.layout.my_model_layout})
+interface EpoxyDataBindingConfig {} 
+```
+
+# 4.0.0-beta4 (June 1, 2020)
+Fixes:
+- Synchronize ListUpdateCallback and PagedListModelCache functions (#987)
+- 4.0.0.beta1 generating duplicate method layout(int) #988
+
+# 4.0.0-beta3 (May 27, 2020)
+- Sort functions in generated kotlin extension function files deterministically to prevent generated sources from changing
+- Avoid generating bitset checks in models when not needed
+- Add options to skip generation of functions for getters, reset, and method overloads to reduce generated code
+
+New annotation processor options are:
+- epoxyDisableGenerateOverloads
+- epoxyDisableGenerateGetters
+- epoxyDisableGenerateReset
+
+These can also be controlled (and overridden) on a per package level with the `PackageModelViewConfig` package annotation.
+
+# 4.0.0-beta1 (May 22, 2020)
+- Support for incremental annotation processing as an Aggregating processor (#972)
+- Removed Litho support
+- A new annotation processor argument `logEpoxyTimings` can be set to get a detailed breakdown of how long the processors took and where they spent their time (off by default)
+- Another new argument `enableParallelEpoxyProcessing` can be set to true to have the annotation processor process annotations and generate files in parallel (via coroutines).
+
+You can enable these processor options in your build.gradle file like so:
+```
+project.android.buildTypes.all { buildType ->
+  buildType.javaCompileOptions.annotationProcessorOptions.arguments =
+      [
+          logEpoxyTimings  : "true",
+          enableParallelEpoxyProcessing     : "true"
+      ]
+}
+```
+
+Parallel processing can greatly speed up processing time (moreso than the incremental support), but given the nature of parallel processing it is still incubating.
+Please report any issues or crashes that you notice.
+(We are currently using parallel mode in our large project at Airbnb with no problems.)
+
+## Breaking
+In order to enable incremental annotation processing a change had to be made in how the processor of
+`@AutoModel` annotations work. If you use `@AutoModel` in an EpoxyController the annotated Model types
+must be either declared in a different module from the EpoxyController, or in the same module in the same java package.
+
+Also make sure you have kapt error types enabled.
+
+However, generally `@AutoModel` is considered legacy and is not recommended. It is a relic of Java Epoxy usage
+and instead the current best practice is to use Kotlin with the Kotlin model extension functions to build models.
+ 
+# 3.11.0 (May 20, 2020)
+- Introduce partial impression visibility states (#973)
+- Fix sticky header crash (#976)
+
+# 3.10.0 (May 15, 2020)
+- Carousel building with Kotlin DSL (#967)
+- Android ViewBinding: added an example in the sample project. (#939)
+- Fix setter with default value lookup in kotlin 1.4 (#966)
+- Change "result" property name in generated model (#965)
+- Add support for Sticky Headers (#842)
+- Use measured width/height if it exists in Carousel. (#915)
+- Add a getter to EpoxyViewHolder.getHolder(). (#952) (#953)
+- Fix visibility tracking during RecyclerView animations (#962)
+- Fix leak in ActivityRecyclerPool ((#906)
+- Rename ResultCallack to ResultCallback in AsyncEpoxyDiffer (#899)
+- Fix incorrect license attributes in POM file (#898)
+
+# 3.9.0 (Dec 17, 2019)
+- Fix reading EpoxyDataBindingPattern enableDoNotHash (#837) 
+- Make EpoxyRecyclerView.setItemSpacingPx() open (#829)
+- Use same version for Mockito Core and Inline (#860)
+- Minor documentation and variable name updates. (#870)
+- Move epoxy-modelfactory tests to their own module (#834) 
+- Remove executable bit from non-executable files (#864)
+- Various repo clean ups and version bumps
+
+# 3.8.0 (Sept 16, 2019)
+- Add support for Kotlin delegation via annotated interface properties #812
+- Fix checked change crash and improve debug errors #806
+- Remove extra space in Kotlin extensions #777
+- Update project to AGP 3.5, Kotlin 1.3.50, Gradle 5.6
+
 # 3.7.0 (July 1, 2019)
 - **New** Add a method to request visibility check externally (https://github.com/airbnb/epoxy/pull/775)
 

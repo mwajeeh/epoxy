@@ -1,8 +1,11 @@
 package com.airbnb.epoxy;
 
 import android.os.Handler;
+import android.view.View;
 
-import com.airbnb.epoxy.AsyncEpoxyDiffer.ResultCallack;
+import com.airbnb.epoxy.AsyncEpoxyDiffer.ResultCallback;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,7 @@ import androidx.annotation.UiThread;
 import androidx.recyclerview.widget.DiffUtil.ItemCallback;
 import androidx.recyclerview.widget.RecyclerView;
 
-public final class EpoxyControllerAdapter extends BaseEpoxyAdapter implements ResultCallack {
+public final class EpoxyControllerAdapter extends BaseEpoxyAdapter implements ResultCallback {
   private final NotifyBlocker notifyBlocker = new NotifyBlocker();
   private final AsyncEpoxyDiffer differ;
   private final EpoxyController epoxyController;
@@ -109,11 +112,13 @@ public final class EpoxyControllerAdapter extends BaseEpoxyAdapter implements Re
 
   @Override
   public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+    super.onAttachedToRecyclerView(recyclerView);
     epoxyController.onAttachedToRecyclerViewInternal(recyclerView);
   }
 
   @Override
   public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
+    super.onDetachedFromRecyclerView(recyclerView);
     epoxyController.onDetachedFromRecyclerViewInternal(recyclerView);
   }
 
@@ -208,6 +213,23 @@ public final class EpoxyControllerAdapter extends BaseEpoxyAdapter implements Re
     }
   }
 
+  @UiThread
+  void notifyModelChanged(int position) {
+    ArrayList<EpoxyModel<?>> updatedList = new ArrayList<>(getCurrentModels());
+
+    notifyBlocker.allowChanges();
+    notifyItemChanged(position);
+    notifyBlocker.blockChanges();
+
+    boolean interruptedDiff = differ.forceListOverride(updatedList);
+
+    if (interruptedDiff) {
+      // The move interrupted a model rebuild/diff that was in progress,
+      // so models may be out of date and we should force them to rebuilt
+      epoxyController.requestModelBuild();
+    }
+  }
+
   private static final ItemCallback<EpoxyModel<?>> ITEM_CALLBACK =
       new ItemCallback<EpoxyModel<?>>() {
         @Override
@@ -225,4 +247,31 @@ public final class EpoxyControllerAdapter extends BaseEpoxyAdapter implements Re
           return new DiffPayload(oldItem);
         }
       };
+
+  /**
+   * Delegates the callbacks received in the adapter
+   * to the controller.
+   */
+  @Override
+  public boolean isStickyHeader(int position) {
+    return epoxyController.isStickyHeader(position);
+  }
+
+  /**
+   * Delegates the callbacks received in the adapter
+   * to the controller.
+   */
+  @Override
+  public void setupStickyHeaderView(@NotNull View stickyHeader) {
+    epoxyController.setupStickyHeaderView(stickyHeader);
+  }
+
+  /**
+   * Delegates the callbacks received in the adapter
+   * to the controller.
+   */
+  @Override
+  public void teardownStickyHeaderView(@NotNull View stickyHeader) {
+    epoxyController.teardownStickyHeaderView(stickyHeader);
+  }
 }

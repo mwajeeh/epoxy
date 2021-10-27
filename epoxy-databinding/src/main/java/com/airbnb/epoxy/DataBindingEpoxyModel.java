@@ -3,6 +3,7 @@ package com.airbnb.epoxy;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 
 import com.airbnb.epoxy.DataBindingEpoxyModel.DataBindingHolder;
 
@@ -36,7 +37,7 @@ import androidx.databinding.ViewDataBinding;
 public abstract class DataBindingEpoxyModel extends EpoxyModelWithHolder<DataBindingHolder> {
 
   @Override
-  protected View buildView(@NonNull ViewGroup parent) {
+  public View buildView(@NonNull ViewGroup parent) {
     LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
     ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, getViewType(), parent, false);
     View view = binding.getRoot();
@@ -95,7 +96,7 @@ public abstract class DataBindingEpoxyModel extends EpoxyModelWithHolder<DataBin
   }
 
   @Override
-  protected final DataBindingHolder createNewHolder() {
+  protected final DataBindingHolder createNewHolder(@NonNull ViewParent parent) {
     return new DataBindingHolder();
   }
 

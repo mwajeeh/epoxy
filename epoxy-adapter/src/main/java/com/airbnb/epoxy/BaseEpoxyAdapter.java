@@ -4,15 +4,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.airbnb.epoxy.stickyheader.StickyHeaderCallbacks;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Collections;
 import java.util.List;
 
 import androidx.annotation.CallSuper;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup;
 import androidx.recyclerview.widget.RecyclerView;
 
-public abstract class BaseEpoxyAdapter extends RecyclerView.Adapter<EpoxyViewHolder> {
+public abstract class BaseEpoxyAdapter
+    extends RecyclerView.Adapter<EpoxyViewHolder>
+    implements StickyHeaderCallbacks {
 
   private static final String SAVED_STATE_ARG_VIEW_HOLDERS = "saved_state_view_holders";
 
@@ -75,10 +82,23 @@ public abstract class BaseEpoxyAdapter extends RecyclerView.Adapter<EpoxyViewHol
   }
 
   @Override
+  public long getItemId(int position) {
+    // This does not call getModelForPosition so that we don't use the id of the empty model when
+    // hidden,
+    // so that the id stays constant when gone vs shown
+    return getCurrentModels().get(position).id();
+  }
+
+  @Override
+  public int getItemViewType(int position) {
+    return viewTypeManager.getViewTypeAndRememberModel(getModelForPosition(position));
+  }
+
+  @Override
   public EpoxyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     EpoxyModel<?> model = viewTypeManager.getModelForViewType(this, viewType);
     View view = model.buildView(parent);
-    return new EpoxyViewHolder(view, model.shouldSaveViewState());
+    return new EpoxyViewHolder(parent, view, model.shouldSaveViewState());
   }
 
   @Override
@@ -148,19 +168,6 @@ public abstract class BaseEpoxyAdapter extends RecyclerView.Adapter<EpoxyViewHol
     return boundViewHolders;
   }
 
-  @Override
-  public int getItemViewType(int position) {
-    return viewTypeManager.getViewTypeAndRememberModel(getModelForPosition(position));
-  }
-
-  @Override
-  public long getItemId(int position) {
-    // This does not call getModelForPosition so that we don't use the id of the empty model when
-    // hidden,
-    // so that the id stays constant when gone vs shown
-    return getCurrentModels().get(position).id();
-  }
-
   EpoxyModel<?> getModelForPosition(int position) {
     return getCurrentModels().get(position);
   }
@@ -173,6 +180,15 @@ public abstract class BaseEpoxyAdapter extends RecyclerView.Adapter<EpoxyViewHol
     EpoxyModel<?> model = holder.getModel();
     holder.unbind();
     onModelUnbound(holder, model);
+  }
+
+  @CallSuper
+  @Override
+  public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
+    // The last model is saved for optimization, but holding onto it can leak anything saved inside
+    // the model (like a click listener that references a Fragment). This is only needed during
+    // the viewholder creation phase, so it is safe to clear now.
+    viewTypeManager.lastModelForViewTypeLookup = null;
   }
 
   /**
@@ -283,4 +299,44 @@ public abstract class BaseEpoxyAdapter extends RecyclerView.Adapter<EpoxyViewHol
   public boolean isMultiSpan() {
     return spanCount > 1;
   }
+
+  //region Sticky header
+
+  /**
+   * Optional callback to setup the sticky view,
+   * by default it doesn't do anything.
+   * <p>
+   * The sub-classes should override the function if they are
+   * using sticky header feature.
+   */
+  @Override
+  public void setupStickyHeaderView(@NotNull View stickyHeader) {
+    // no-op
+  }
+
+  /**
+   * Optional callback to perform tear down operation on the
+   * sticky view, by default it doesn't do anything.
+   * <p>
+   * The sub-classes should override the function if they are
+   * using sticky header feature.
+   */
+  @Override
+  public void teardownStickyHeaderView(@NotNull View stickyHeader) {
+    // no-op
+  }
+
+  /**
+   * Called to check if the item at the position is a sticky item,
+   * by default returns false.
+   * <p>
+   * The sub-classes should override the function if they are
+   * using sticky header feature.
+   */
+  @Override
+  public boolean isStickyHeader(int position) {
+    return false;
+  }
+
+  //endregion
 }

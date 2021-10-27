@@ -7,17 +7,19 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.Space
 import androidx.recyclerview.widget.RecyclerView
+import androidx.test.core.app.ApplicationProvider
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.ParameterizedRobolectricTestRunner
-import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
+import org.robolectric.annotation.LooperMode
 
-@Config(sdk = [21], manifest = TestRunner.MANIFEST_PATH)
+@Config(sdk = [21])
 @RunWith(ParameterizedRobolectricTestRunner::class)
+@LooperMode(LooperMode.Mode.LEGACY)
 class EpoxyModelGroupTest(val useViewStubs: Boolean) {
 
     private lateinit var recyclerView: RecyclerView
@@ -27,7 +29,7 @@ class EpoxyModelGroupTest(val useViewStubs: Boolean) {
 
     @Before
     fun init() {
-        recyclerView = RecyclerView(RuntimeEnvironment.application)
+        recyclerView = RecyclerView(ApplicationProvider.getApplicationContext())
         topLevelHolder?.unbind()
         topLevelHolder = null
     }
@@ -40,7 +42,8 @@ class EpoxyModelGroupTest(val useViewStubs: Boolean) {
 
     private fun bind(modelGroup: EpoxyModelGroup, previousGroup: EpoxyModelGroup? = null) {
         if (topLevelHolder == null) {
-            topLevelHolder = EpoxyViewHolder(modelGroup.buildView(recyclerView), false)
+            topLevelHolder =
+                EpoxyViewHolder(recyclerView, modelGroup.buildView(recyclerView), false)
         }
         topLevelHolder!!.bind(modelGroup, previousGroup, emptyList(), 0)
     }
@@ -134,25 +137,35 @@ class EpoxyModelGroupTest(val useViewStubs: Boolean) {
             public override fun buildView(parent: ViewGroup): View {
                 return LinearLayout(parent.context).apply {
 
-                    addView(ViewStub(parent.context).apply {
-                        inflatedId = 0
-                    })
+                    addView(
+                        ViewStub(parent.context).apply {
+                            inflatedId = 0
+                        }
+                    )
 
-                    addView(LinearLayout(parent.context).apply {
-                        addView(ViewStub(parent.context).apply {
-                            inflatedId = 1
-                        })
+                    addView(
+                        LinearLayout(parent.context).apply {
+                            addView(
+                                ViewStub(parent.context).apply {
+                                    inflatedId = 1
+                                }
+                            )
 
-                        addView(Space(parent.context))
+                            addView(Space(parent.context))
 
-                        addView(ViewStub(parent.context).apply {
-                            inflatedId = 2
-                        })
-                    })
+                            addView(
+                                ViewStub(parent.context).apply {
+                                    inflatedId = 2
+                                }
+                            )
+                        }
+                    )
 
-                    addView(ViewStub(parent.context).apply {
-                        inflatedId = 3
-                    })
+                    addView(
+                        ViewStub(parent.context).apply {
+                            inflatedId = 3
+                        }
+                    )
                 }
             }
         }
