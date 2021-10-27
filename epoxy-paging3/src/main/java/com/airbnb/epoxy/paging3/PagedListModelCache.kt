@@ -94,6 +94,11 @@ internal class PagedListModelCache<T : Any>(
             (0 until count).forEach {
                 modelCache.add(position, null)
             }
+            lastPosition?.let {
+                if (position < it) {
+                    lastPosition = it + count
+                }
+            }
             rebuildCallback()
         }
 
